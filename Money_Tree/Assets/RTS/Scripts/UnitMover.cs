@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UnitMover : MonoBehaviour 
 {
+    /// The speed the unity moves at
+    float UnitSpeed = 10.0f;
+
     bool _selected = false;
     Vector3 _targetPos = Vector3.zero;
 
@@ -13,7 +16,9 @@ public class UnitMover : MonoBehaviour
 	
 	void Update()
 	{
-		
+        var curPos = this.transform.position;
+        var nextPos = Vector3.MoveTowards(curPos, _targetPos, UnitSpeed * Time.deltaTime);
+        this.transform.position = nextPos;
 	}
 
 	void OnMouseDown()
@@ -23,9 +28,12 @@ public class UnitMover : MonoBehaviour
 	}
 
 
-    // Tell the unit to start moving towards a point
+    // Tell the unit to start moving towards a point if it was selected
     public void UnitMoveTowards(Vector3 point)
     {
-        // TODO IMPLEMENT
+        if(_selected)
+        {
+            _targetPos = point;
+        }
     }
 }
