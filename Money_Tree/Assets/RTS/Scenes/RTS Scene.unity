@@ -113,8 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD:Money_Tree/Assets/RTS/RTS.unity
-=======
 --- !u!1 &473843808
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +141,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> edbb23de7c67e72b2b039bbac2ff16964aeec438:Money_Tree/Assets/RTS/Scenes/RTS.unity
 --- !u!1 &593956397
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,8 +237,6 @@ Transform:
   - {fileID: 1778049753}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-<<<<<<< HEAD:Money_Tree/Assets/RTS/RTS.unity
-=======
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877243336
 GameObject:
@@ -314,7 +309,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
->>>>>>> edbb23de7c67e72b2b039bbac2ff16964aeec438:Money_Tree/Assets/RTS/Scenes/RTS.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &673648463
 BoxCollider:
@@ -339,8 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9abf474c887d342a0688fed7ffa787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:Money_Tree/Assets/RTS/RTS.unity
-=======
 --- !u!1 &1096153881
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +361,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> edbb23de7c67e72b2b039bbac2ff16964aeec438:Money_Tree/Assets/RTS/Scenes/RTS.unity
 --- !u!1 &1318334770
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +452,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MouseTriggerZone: 0.1
   CameraSpeed: 0.1
-<<<<<<< HEAD:Money_Tree/Assets/RTS/RTS.unity
 --- !u!1 &1431391773
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,5 +638,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1778049752}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-=======
->>>>>>> edbb23de7c67e72b2b039bbac2ff16964aeec438:Money_Tree/Assets/RTS/Scenes/RTS.unity

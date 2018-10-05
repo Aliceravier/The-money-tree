@@ -44,6 +44,6 @@ public class Positioning : MonoBehaviour {
         float ya = this.transform.position.y;
         float xb = thing.transform.position.x;       
         float yb = thing.transform.position.y;
-        return Mathf.Sqrt(Mathf.Pow(xb-xa, 2) + Mathf.Pow(yb - ya, 2))
+        return Mathf.Sqrt(Mathf.Pow(xb - xa, 2) + Mathf.Pow(yb - ya, 2));
     }
 }

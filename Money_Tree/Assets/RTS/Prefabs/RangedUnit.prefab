@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4136351168882760}
   - component: {fileID: 114922466524566982}
+  - component: {fileID: 114451715311748040}
+  - component: {fileID: 114592293208559854}
   m_Layer: 0
   m_Name: RangedUnit
   m_TagString: PlayerUnit
@@ -40,6 +42,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114451715311748040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221531938124150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55803574ef263e64586ca5bfadfda6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  range: 0
+--- !u!114 &114592293208559854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221531938124150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c70a3978b8f63c49a1d8f9cfa3a4b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114922466524566982
 MonoBehaviour:
   m_ObjectHideFlags: 1
