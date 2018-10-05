@@ -8,9 +8,12 @@ public class Health : MonoBehaviour
     public uint MAX_HP = 50;
     public uint HP = MAX_HP;
 
+    Animator _animator;
+
 	// Use this for initialization
 	void Start()
 	{
+        _animator = GetComponent<Animator>();
 	}
 	
     // Makes the entity take some damage; destroys it if HP < 0
@@ -22,8 +25,12 @@ public class Health : MonoBehaviour
         }
         else
         {
-            // Entity took excessive damage and is now dying
-            // TODO: Trigger death animation
+            // Entity took excessive damage and will now die
+            if(_animator != null)
+            {
+                _animator.SetTrigger("Die");
+                // FIXME: Wait until the animation ends
+            }
             GameObject.Destroy(this.gameObject);
         }
     }
