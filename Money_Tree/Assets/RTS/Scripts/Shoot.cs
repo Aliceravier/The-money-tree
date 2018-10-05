@@ -15,7 +15,7 @@ public class Shoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GameObject nearestEnemy = this.GetComponent<Positioning>().FindNearestEnemyUnit();
-        if (this.GetComponent<Positioning>().inRangeOf(nearestEnemy))
+        if (this.GetComponent<Positioning>().inFarRangeOf(nearestEnemy))
         {
             shoot(nearestEnemy);
         }

@@ -6,13 +6,14 @@ public class Health : MonoBehaviour
 {
     // The hitpoints the entity can withstand.
     public uint MAX_HP = 50;
-    public uint HP = MAX_HP;
+    public uint HP;
 
     Animator _animator;
 
 	// Use this for initialization
 	void Start()
 	{
+        HP = MAX_HP;
         _animator = GetComponent<Animator>();
 	}
 	

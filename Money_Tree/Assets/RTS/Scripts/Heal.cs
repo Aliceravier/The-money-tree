@@ -14,7 +14,7 @@ public class Heal : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GameObject nearestPlayerUnit = this.GetComponent<Positioning>().findNearestPlayerUnit();
-		if(this.GetComponent<Positioning>().inRangeOf(nearestPlayerUnit) && nearestPlayerUnit.GetComponent<Health>().HP < nearestPlayerUnit.GetComponent<Health>().MAX_HP)
+		if(this.GetComponent<Positioning>().inFarRangeOf(nearestPlayerUnit) && nearestPlayerUnit.GetComponent<Health>().HP < nearestPlayerUnit.GetComponent<Health>().MAX_HP)
         {
             heal(nearestPlayerUnit);
         }

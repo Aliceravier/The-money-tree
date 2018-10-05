@@ -49,7 +49,13 @@ public class Positioning : MonoBehaviour {
         return nearestplayer;
     }
 
-    public bool inRangeOf(GameObject thing)
+    public bool inNearRangeOf(GameObject thing)
+    {
+        int range = this.gameObject.GetComponent<Hit>().range;
+        return (distanceTo(thing) < range);
+    }
+
+    public bool inFarRangeOf(GameObject thing)
     {
         int range = this.gameObject.GetComponent<Shoot>().range;
         return (distanceTo(thing) < range);
