@@ -5,7 +5,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     // The hitpoints the entity can withstand.
-    public uint HP = 50;
+    public uint MAX_HP = 50;
+    public uint HP = MAX_HP;
 
 	// Use this for initialization
 	void Start()

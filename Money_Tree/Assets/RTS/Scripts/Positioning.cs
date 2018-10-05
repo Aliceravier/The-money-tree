@@ -5,19 +5,21 @@ using UnityEngine;
 public class Positioning : MonoBehaviour {
 
     GameObject[] enemies;
+    GameObject[] players;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         enemies = GameObject.FindGameObjectsWithTag("enemy");
-	}
+        players = GameObject.FindGameObjectsWithTag("playerunit");
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    public GameObject findNearestEnemy()
+    public GameObject FindNearestEnemyUnit()
     {
         float minDistance = distanceTo(enemies[0]);
         GameObject nearestEnemy = enemies[0];
@@ -32,10 +34,25 @@ public class Positioning : MonoBehaviour {
         return nearestEnemy;
     }
 
-    public bool inRangeOfEnemy(GameObject enemy)
+    public GameObject findNearestPlayerUnit()
+    {
+        float minDistance = distanceTo(players[0]);
+        GameObject nearestplayer = players[0];
+        foreach (GameObject player in players)
+        {
+            if (distanceTo(player) < minDistance)
+            {
+                nearestplayer = player;
+                minDistance = distanceTo(player);
+            }
+        }
+        return nearestplayer;
+    }
+
+    public bool inRangeOf(GameObject thing)
     {
         int range = this.gameObject.GetComponent<Shoot>().range;
-        return (distanceTo(enemy) < range);
+        return (distanceTo(thing) < range);
     }
 
     public float distanceTo(GameObject thing)

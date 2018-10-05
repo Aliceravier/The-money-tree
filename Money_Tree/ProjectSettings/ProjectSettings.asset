@@ -618,7 +618,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: b52f5ba7-06ca-4862-bbbd-c3898366f786
   projectName: Money_Tree
   organizationId: aetherflare
