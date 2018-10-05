@@ -12,6 +12,8 @@ public class UnitMover : MonoBehaviour
 
 	void Start()
 	{
+        // Stay where we are at the beginning
+        _targetPos = this.transform.position;
 	}
 	
 	void Update()
@@ -33,6 +35,7 @@ public class UnitMover : MonoBehaviour
     {
         if(_selected)
         {
+            //Debug.Log("Unit " + this + " move towards " + point);
             _targetPos = point;
         }
     }

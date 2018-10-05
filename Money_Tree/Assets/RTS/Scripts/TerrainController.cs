@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Terrain : MonoBehaviour
+public class TerrainController : MonoBehaviour
 {
+    public GameObject CameraObject = null;
     public string UnitTag = "PlayerUnit";
+
+    Camera _camera;
+
 
 	// Use this for initialization
 	void Start()
     {
+        _camera = CameraObject.GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
@@ -18,9 +23,9 @@ public class Terrain : MonoBehaviour
 
     void OnMouseDown()
     {
-        var clickRay = Camera.main.ScreenPointToRay(Input.mousePosition);    
+        var clickRay = _camera.ScreenPointToRay(Input.mousePosition);    
         RaycastHit clickRayHit;
-        var clickHit = Physics.Raycast(clickRay, out clickRayHit);
+        Physics.Raycast(clickRay, out clickRayHit);
 
         var units = GameObject.FindGameObjectsWithTag(UnitTag);
         foreach(GameObject unit in units)
