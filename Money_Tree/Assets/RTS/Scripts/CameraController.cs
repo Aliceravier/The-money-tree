@@ -28,25 +28,25 @@ public class CameraController : MonoBehaviour
         var mouseUV = _camera.ScreenToViewportPoint(mousePos);
 
         // Move the camera when the cursor nears the edges
-        var curPos = this.transform.position;
+        var posDelta = Vector3.zero;
         if(mouseUV.x < MouseTriggerZone)
         {
-            curPos.x -= CameraSpeed;
+            posDelta.x -= CameraSpeed;
         }
         else if(mouseUV.x > (1.0f - MouseTriggerZone))
         {
-            curPos.x += CameraSpeed;
+            posDelta.x += CameraSpeed;
         }
         if(mouseUV.y < MouseTriggerZone)
         {
-            curPos.z -= CameraSpeed;
+            posDelta.y -= CameraSpeed;
         }
         else if(mouseUV.y > (1.0f - MouseTriggerZone))
         {
-            curPos.z += CameraSpeed;
+            posDelta.y += CameraSpeed;
         }
 
-        this.transform.position = curPos;
+        this.transform.Translate(posDelta);
     }
 
     void OnMouseDown()
