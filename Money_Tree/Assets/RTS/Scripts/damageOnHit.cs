@@ -16,9 +16,9 @@ public class damageOnHit : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        if (!CompareTag(collision.gameObject.tag) && (collision.gameObject.GetComponent("Health")) != null){
+        if (!collision.gameObject.CompareTag(gameObject.tag) && (collision.gameObject.GetComponent("Health")) != null){
             collision.gameObject.GetComponent<Health>().HP -= damage;
         }
     }

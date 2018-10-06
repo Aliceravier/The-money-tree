@@ -6,18 +6,18 @@ public class Shoot : MonoBehaviour {
 
     public GameObject Bullet;
 
-    public int bulletSpeed = 6;
+    public int bulletSpeed = 10;
 
     public int defaultDestructionTime = 5;
 
-    public int Range;
+    public int Range = 10;
 
     // How the enemies to shoot are tagged
     public string EnemyTag = "EnemyUnit";
 
     Positioning _positioning;
 
-    public int cooldownTime = 10;
+    public int cooldownTime = 3;
 
     public float timeOfLastShot = 0;
 
@@ -33,7 +33,9 @@ public class Shoot : MonoBehaviour {
 	void Update () {
         GameObject nearestEnemy = _positioning.FindNearestTagged(EnemyTag);
         if (nearestEnemy == null)
+        {
             return;
+        }
         if (_positioning.DistanceTo(nearestEnemy) < Range && (Time.time - timeOfLastShot) > cooldownTime)
         {
             ShootEntity(nearestEnemy);

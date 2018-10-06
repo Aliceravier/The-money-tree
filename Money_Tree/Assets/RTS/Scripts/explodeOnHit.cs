@@ -6,6 +6,10 @@ public class explodeOnHit : MonoBehaviour {
 
     public GameObject Particle;
 
+    public Team team = Team.player;
+
+    public float timeTillParticleDestruction = 1f;
+
 
 	// Use this for initialization
 	void Start () {
@@ -16,15 +20,23 @@ public class explodeOnHit : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        Destroy(this.gameObject);
-        int nbParticles = 3;
-        for (int i = 0; i < nbParticles; i++)
+        var health = collision.gameObject.GetComponent<Health>();
+        if (health == null)
         {
-            GameObject newParticle = Object.Instantiate(Particle, this.transform.position, Quaternion.identity);
-            newParticle.transform.Rotate(new Vector3(Random.value, Random.value, Random.value));
-            newParticle.GetComponent<Rigidbody>().velocity = newParticle.transform.forward;
+            Destroy(this.gameObject);
+        }
+        else if(health.team != team) {        
+            int nbParticles = 3;
+            for (int i = 0; i < nbParticles; i++)
+            {
+                GameObject newParticle = Object.Instantiate(Particle, this.transform.position, Quaternion.identity);
+                newParticle.transform.Rotate(new Vector3(Random.value, Random.value, Random.value));
+                newParticle.GetComponent<Rigidbody>().velocity = newParticle.transform.forward;
+                newParticle.AddComponent<destroyAfterTime>();
+                newParticle.GetComponent<destroyAfterTime>().timeTillDestruction = timeTillParticleDestruction;
+            }
         }
     }
 }

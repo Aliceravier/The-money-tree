@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114822106600213878}
   - component: {fileID: 195466734926012220}
   - component: {fileID: 136286017616819844}
+  - component: {fileID: 114677155750230502}
   m_Layer: 0
   m_Name: PlayerUnit
   m_TagString: PlayerUnit
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221531938124150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.1, z: 0}
+  m_LocalPosition: {x: 15.42, y: 4.38, z: 14.2}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 50
+  team: 0
 --- !u!114 &114592293208559854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,6 +71,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c70a3978b8f63c49a1d8f9cfa3a4b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114677155750230502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221531938124150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c898fe40a3342df4997d9f92451cb38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 0}
+  bulletSpeed: 20
+  defaultDestructionTime: 5
+  Range: 10
+  EnemyTag: EnemyUnit
+  cooldownTime: 1
+  timeOfLastShot: 0
 --- !u!114 &114822106600213878
 MonoBehaviour:
   m_ObjectHideFlags: 1

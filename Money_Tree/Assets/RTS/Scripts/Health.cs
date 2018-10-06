@@ -3,10 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Team
+{
+    player, enemy
+};
+
+
 public class Health : MonoBehaviour
 {
     // The maximum HP of the entity.
     public int MaxHP = 50;
+
+    public GameObject Particle;
+
+    public float particleSpeed =4;
+
+    public float timeTillParticleDestruction=2;
+
+    public Team team;
 
     // The current HP of the entity.
     // The setter internally calls `TakeDamage()`
@@ -50,12 +64,16 @@ public class Health : MonoBehaviour
         if(_hp <= 0)
         {
             // Entity took excessive damage and will now die
-            if(_animator != null)
-            {
-                _animator.SetTrigger("Die");
-                // FIXME: Wait until the animation ends
-            }
             GameObject.Destroy(this.gameObject);
+            int nbParticles = 100;
+            for (int i = 0; i < nbParticles; i++)
+            {
+                GameObject newParticle = Object.Instantiate(Particle, this.transform.position, Quaternion.identity);
+                newParticle.transform.rotation = Random.rotation;
+                newParticle.GetComponent<Rigidbody>().velocity = newParticle.transform.forward * particleSpeed;
+                newParticle.AddComponent<destroyAfterTime>();
+                newParticle.GetComponent<destroyAfterTime>().timeTillDestruction = timeTillParticleDestruction;
+            }
         }
     }
 }
