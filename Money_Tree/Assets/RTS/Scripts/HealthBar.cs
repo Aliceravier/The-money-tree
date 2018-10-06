@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    public Vector2 Size = new Vector2(100.0f, 10.0f);
-
-
-    Health _health;
+    Health _health; // (of the PARENT gameobject)
+    TextMesh _textMesh;
 
     // Use this for initialization
     void Start()
     {
-        _health = GetComponent<Health>();
+        _health = this.transform.parent.GetComponent<Health>();
+        _textMesh = this.GetComponent<TextMesh>();
     }
-    
-    // Update is called once per frame
-    void OnGUI()
+
+    void Update()
     {
-        GUI.BeginGroup(new Rect(0.0f, 0.0f, Size.x, Size.y));
-        {
-            GUI.Box(new Rect(0.0f, 0.0f, Size.x, Size.y), "Hello world");
-        }
-        GUI.EndGroup();
+        _textMesh.text = _health.HP + "/" + _health.MaxHP;
     }
 }
