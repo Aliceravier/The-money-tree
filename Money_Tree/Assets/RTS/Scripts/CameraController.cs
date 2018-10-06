@@ -39,11 +39,11 @@ public class CameraController : MonoBehaviour
         }
         if(mouseUV.y < MouseTriggerZone)
         {
-            posDelta.y -= CameraSpeed;
+            posDelta.z -= CameraSpeed;
         }
         else if(mouseUV.y > (1.0f - MouseTriggerZone))
         {
-            posDelta.y += CameraSpeed;
+            posDelta.z += CameraSpeed;
         }
 
         this.transform.Translate(posDelta);

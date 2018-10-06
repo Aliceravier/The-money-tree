@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 20072257408152178}
   - component: {fileID: 81931345493512468}
   - component: {fileID: 114241179696205804}
+  - component: {fileID: 114538467741481334}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1089452682769734}
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -6.14, y: 12.92, z: -6.14}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,7 +66,7 @@ Camera:
   near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -101,4 +102,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MouseTriggerZone: 0.1
-  CameraSpeed: 0.1
+  CameraSpeed: 1
+--- !u!114 &114538467741481334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1089452682769734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a356ba2034950e240b77d988a36daecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 20072257408152178}
+  SelectableTag: PlayerEntity
