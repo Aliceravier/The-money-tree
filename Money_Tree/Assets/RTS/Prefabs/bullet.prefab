@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Particle: {fileID: 0}
   team: 0
+  timeTillParticleDestruction: 0.3
 --- !u!212 &212693336038739070
 SpriteRenderer:
   m_ObjectHideFlags: 1

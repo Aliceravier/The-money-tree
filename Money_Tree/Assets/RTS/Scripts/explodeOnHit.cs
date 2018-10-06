@@ -32,7 +32,7 @@ public class explodeOnHit : MonoBehaviour {
             for (int i = 0; i < nbParticles; i++)
             {
                 GameObject newParticle = Object.Instantiate(Particle, this.transform.position, Quaternion.identity);
-                newParticle.transform.Rotate(new Vector3(Random.value, Random.value, Random.value));
+                newParticle.transform.rotation = Random.rotation;
                 newParticle.GetComponent<Rigidbody>().velocity = newParticle.transform.forward;
                 newParticle.AddComponent<destroyAfterTime>();
                 newParticle.GetComponent<destroyAfterTime>().timeTillDestruction = timeTillParticleDestruction;

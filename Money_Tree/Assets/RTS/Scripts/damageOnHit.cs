@@ -6,8 +6,10 @@ public class damageOnHit : MonoBehaviour {
 
     public int damage;
 
-	// Use this for initialization
-	void Start () {
+    public Team team = Team.player;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -18,7 +20,8 @@ public class damageOnHit : MonoBehaviour {
 
     void OnTriggerEnter(Collider collision)
     {
-        if (!collision.gameObject.CompareTag(gameObject.tag) && (collision.gameObject.GetComponent("Health")) != null){
+        var health = collision.gameObject.GetComponent<Health>();
+        if ((health != null) && health.team != team){
             collision.gameObject.GetComponent<Health>().HP -= damage;
         }
     }
