@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221531938124150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.3, y: 5.87, z: 0.6}
+  m_LocalPosition: {x: -3.07, y: 5.87, z: 0.6}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 1.5, z: 0}
   SelectionGlowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  FlipSpriteX: 1
 --- !u!195 &195466734926012220
 NavMeshAgent:
   m_ObjectHideFlags: 1

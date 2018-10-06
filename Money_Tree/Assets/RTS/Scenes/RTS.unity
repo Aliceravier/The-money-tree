@@ -98,7 +98,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.12
+    agentRadius: 0.3
     agentHeight: 0.6
     agentSlope: 45
     agentClimb: 0.4
@@ -106,7 +106,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.04
+    cellSize: 0.1
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -277,6 +277,31 @@ Prefab:
     - target: {fileID: 1221531938124150, guid: 01209abecd8990644b826116be8f6776, type: 2}
       propertyPath: m_Name
       value: RangedUnit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195466734926012220, guid: 01209abecd8990644b826116be8f6776,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 195466734926012220, guid: 01209abecd8990644b826116be8f6776,
+        type: 2}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195466734926012220, guid: 01209abecd8990644b826116be8f6776,
+        type: 2}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 195466734926012220, guid: 01209abecd8990644b826116be8f6776,
+        type: 2}
+      propertyPath: m_AngularSpeed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 195466734926012220, guid: 01209abecd8990644b826116be8f6776,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01209abecd8990644b826116be8f6776, type: 2}

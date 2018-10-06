@@ -65,7 +65,7 @@ public class UnitMover : MonoBehaviour
         {
             // Flip sprite based on where we are going
             // IMPORTANT: By default sprites should look to their left!
-            var velocity = _navAgent.velocity;
+            var velocity = _navAgent.desiredVelocity;
             _spriteRenderer.flipX = velocity.x > 0.0f;
         }
     }
