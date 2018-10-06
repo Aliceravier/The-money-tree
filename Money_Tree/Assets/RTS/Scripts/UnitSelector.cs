@@ -7,19 +7,8 @@ public class UnitSelector : MonoBehaviour
     // The camera to use for raycasting to the scene
     public Camera Camera = null;
 
-    // The current selection
-    public HashSet<GameObject> Selection
-    {
-        get
-        {
-            return _selection;
-        }
-    }
-
     // The tag that selectable objects need
-    public string SelectableTag = "PlayerEntity";
-
-    HashSet<GameObject> _selection = new HashSet<GameObject>();
+    public string SelectableTag = "PlayerUnit";
 
     void Start()
     {
@@ -29,12 +18,25 @@ public class UnitSelector : MonoBehaviour
     {
         if(Input.GetAxis("SelectAll") > 0.0f)
         {
-            _selection.Clear();
             var entities = GameObject.FindGameObjectsWithTag(SelectableTag);
+            if(entities == null || entities.Length == 0)
+            {
+                // No selectable units
+                return;
+            }
+
             foreach(GameObject entity in entities)
             {
-                _selection.Add(entity);
+                var selectable = entity.GetComponent<Selectable>();
+                if(selectable != null)
+                {
+                    selectable.Select();
+                }
             }
         }
+    }
+
+    void MouseDown()
+    {
     }
 }
