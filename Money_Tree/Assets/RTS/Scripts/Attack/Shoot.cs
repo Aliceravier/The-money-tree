@@ -32,6 +32,8 @@ public class Shoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GameObject nearestEnemy = _positioning.FindNearestTagged(EnemyTag);
+        if (nearestEnemy == null)
+            return;
         if (_positioning.DistanceTo(nearestEnemy) < Range && (Time.time - timeOfLastShot) > cooldownTime)
         {
             ShootEntity(nearestEnemy);
