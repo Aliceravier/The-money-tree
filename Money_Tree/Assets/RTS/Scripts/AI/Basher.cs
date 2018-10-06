@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Basher : MonoBehaviour
 {
-    // The tag player units 
-    public string PlayerTag = "PlayerUnit";
+    // The tag entities to hit are marked by
+    public string TargetTag = "PlayerUnit";
 
 
     // Use this for initialization
