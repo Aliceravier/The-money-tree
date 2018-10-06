@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114822106600213878}
   - component: {fileID: 195466734926012220}
   - component: {fileID: 136286017616819844}
+  - component: {fileID: 114932477105502862}
   m_Layer: 0
   m_Name: PlayerUnit
   m_TagString: PlayerUnit
@@ -93,8 +94,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: 0}
-  SelectionGlowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   FlipSpriteX: 1
+--- !u!114 &114932477105502862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221531938124150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54790a1e1b8840b4a9c98cf29ce61a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectionGlowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  MouseSelectable: 1
 --- !u!136 &136286017616819844
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -102,12 +115,12 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221531938124150}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.12
   m_Height: 0.6
   m_Direction: 1
-  m_Center: {x: 0, y: -0, z: 0}
+  m_Center: {x: 0, y: -0.05, z: 0}
 --- !u!195 &195466734926012220
 NavMeshAgent:
   m_ObjectHideFlags: 1
