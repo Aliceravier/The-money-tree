@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 61219184989503020}
   - component: {fileID: 195466734926012220}
   m_Layer: 0
-  m_Name: RangedUnit
+  m_Name: PlayerUnit
   m_TagString: PlayerUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,9 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9abf474c887d342a0688fed7ffa787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Offset: {x: 0, y: 1.5, z: 0}
-  SelectionGlowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  FlipSpriteX: 1
 --- !u!195 &195466734926012220
 NavMeshAgent:
   m_ObjectHideFlags: 1
