@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class UnitMover : MonoBehaviour 
 {
-    /// The speed the unity moves at
-    float UnitSpeed = 10.0f;
+    // The speed the unity moves at
+    public float UnitSpeed = 10.0f;
+
+    // The offset from the target point where to move the unit to.
+    public Vector3 Offset = Vector3.zero;
+
 
     bool _selected = false;
     Vector3 _targetPos = Vector3.zero;
@@ -36,7 +40,7 @@ public class UnitMover : MonoBehaviour
         if(_selected)
         {
             //Debug.Log("Unit " + this + " move towards " + point);
-            _targetPos = point;
+            _targetPos = point + Offset;
         }
     }
 }
