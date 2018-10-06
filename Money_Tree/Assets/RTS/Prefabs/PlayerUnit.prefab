@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 114592293208559854}
   - component: {fileID: 212005589281125072}
   - component: {fileID: 114822106600213878}
-  - component: {fileID: 61219184989503020}
   - component: {fileID: 195466734926012220}
+  - component: {fileID: 136286017616819844}
   m_Layer: 0
   m_Name: PlayerUnit
   m_TagString: PlayerUnit
@@ -40,37 +40,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221531938124150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.07, y: 5.87, z: 0.6}
+  m_LocalPosition: {x: 0, y: 2.1, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61219184989503020
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1221531938124150}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0509281, y: -0.031751066}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3071906, y: 0.56878203}
-  m_EdgeRadius: 0
 --- !u!114 &114451715311748040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +95,19 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: 0}
   SelectionGlowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   FlipSpriteX: 1
+--- !u!136 &136286017616819844
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221531938124150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.12
+  m_Height: 0.6
+  m_Direction: 1
+  m_Center: {x: 0, y: -0, z: 0}
 --- !u!195 &195466734926012220
 NavMeshAgent:
   m_ObjectHideFlags: 1
