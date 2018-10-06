@@ -14,6 +14,8 @@ Shader "Sprites/Edge"
         [PerRendererData] _EnableExternalAlpha ("Enable External Alpha", Float) = 0
 
         [PerRendererData] _EdgeGlowColor ("Edge Glow Color", Color) = (1,1,0,1)
+        [PerRendererData] _EdgeGlowIntensity ("Edge Glow Intensity (0.0 to 1.0)", Float) = 0.8
+        [PerRendererData] _EdgeGlowTrigger ("Edge Glow Trigger Value (0.0 to sqrt(0.5))", Float) = 0.2
     }
 
     SubShader
@@ -45,11 +47,25 @@ Shader "Sprites/Edge"
             #include "UnitySprites.cginc"
 
 
-            fixed4 _EdgeGlowColor; // (defined in Properties)
+            // Values defined in the Properties section:
+            fixed4 _EdgeGlowColor; 
+            float _EdgeGlowIntensity;
+            float _EdgeGlowTrigger;
 
             fixed4 EdgeSpriteFrag(v2f IN) : SV_Target
             {
-                return SpriteFrag(IN) * _EdgeGlowColor;
+                fixed4 baseColor = SpriteFrag(IN);
+
+                // FIXME: Apply glow selectively based on the distance to the center
+                // Does not look too good, UV edges != sprite edges
+                //float edgeFac = length(IN.texcoord - float2(0.5, 0.5)); // 0.0 to (sqrt(0.5) ~= 0.71)
+                //float glowFac = float(edgeFac > _EdgeGlowTrigger) * _EdgeGlowIntensity;
+                //fixed4 glowColor = _EdgeGlowColor * glowFac * baseColor.a;
+
+                // FIXME: Current implementation: apply glow to whole sprite
+                fixed4 glowColor = _EdgeGlowColor * _EdgeGlowIntensity * baseColor.a;
+
+                return baseColor + glowColor;
             }
         ENDCG
         }
