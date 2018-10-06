@@ -24,11 +24,6 @@ public class Hit : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        GameObject nearestEnemy = _positioning.FindNearestTagged(EnemyTag);
-        if (nearestEnemy != null && _positioning.DistanceTo(nearestEnemy) <= Range)
-        {
-            HitEntity(nearestEnemy);
-        }
     }
 
     // Deal Damage to entity
