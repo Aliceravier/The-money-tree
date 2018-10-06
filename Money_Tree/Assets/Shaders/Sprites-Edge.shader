@@ -14,7 +14,7 @@ Shader "Sprites/Edge"
         [PerRendererData] _EnableExternalAlpha ("Enable External Alpha", Float) = 0
 
         [PerRendererData] _EdgeGlowColor ("Edge Glow Color", Color) = (1,1,0,1)
-        [PerRendererData] _EdgeGlowIntensity ("Edge Glow Intensity (0.0 to 1.0)", Float) = 0.8
+        [PerRendererData] _EdgeGlowIntensity ("Edge Glow Intensity (0.0 to 1.0)", Float) = 1.0
         [PerRendererData] _EdgeGlowTrigger ("Edge Glow Trigger Value (0.0 to sqrt(0.5))", Float) = 0.2
     }
 
