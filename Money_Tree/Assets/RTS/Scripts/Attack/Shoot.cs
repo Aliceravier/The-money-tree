@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GameObject nearestEnemy = _positioning.FindNearestTagged(EnemyTag);
-        if (this.GetComponent<Positioning>().inFarRangeOf(nearestEnemy) && (Time.time - timeOfLastShot) > cooldownTime)
+        if (_positioning.DistanceTo(nearestEnemy) < Range && (Time.time - timeOfLastShot) > cooldownTime)
         {
             ShootEntity(nearestEnemy);
             timeOfLastShot = Time.time;
@@ -39,7 +39,8 @@ public class Shoot : MonoBehaviour {
     // Shoot the given entity
     public void ShootEntity(GameObject entity)
     {
-        Object.Instantiate(Bullet, this.transform.position, Quaternion.identity);
-        Bullet.GetComponent<Rigidbody>().velocity = Bullet.transform.forward * 6;
+        GameObject newBullet = Object.Instantiate(Bullet, this.transform.position, Quaternion.identity);
+        newBullet.transform.LookAt(entity.transform);
+        newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * 6;
     }
 }

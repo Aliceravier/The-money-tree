@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 114275772472052228}
   - component: {fileID: 212791129617174562}
   - component: {fileID: 114002148022541308}
-  - component: {fileID: 61286010372172040}
   - component: {fileID: 195663694747380936}
   - component: {fileID: 114415318954915820}
+  - component: {fileID: 65690007873696032}
   m_Layer: 0
   m_Name: EnemyUnit
   m_TagString: EnemyUnit
@@ -40,37 +40,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440386885370906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.07, y: 5.87, z: 0.6}
+  m_LocalPosition: {x: 13.01, y: 5.87, z: 8.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61286010372172040
-BoxCollider2D:
+--- !u!65 &65690007873696032
+BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440386885370906}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0509281, y: -0.031751066}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3071906, y: 0.56878203}
-  m_EdgeRadius: 0
+  m_Size: {x: 5.12, y: 5.12, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114002148022541308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,7 +115,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1440386885370906}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.12
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
