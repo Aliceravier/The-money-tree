@@ -201,7 +201,7 @@ Transform:
   - {fileID: 1119526520}
   - {fileID: 1446470616}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &47156920
 MonoBehaviour:
@@ -221,11 +221,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1221531938124150, guid: 01209abecd8990644b826116be8f6776,
     type: 2}
   m_PrefabInternal: {fileID: 1461172403}
+--- !u!114 &584215570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584215569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54790a1e1b8840b4a9c98cf29ce61a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectionGlowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  MouseSelectable: 1
 --- !u!1 &795734011 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1089452682769734, guid: 6ab2f683a9f29264fa137e43e06fc13b,
     type: 2}
   m_PrefabInternal: {fileID: 1359259045}
+--- !u!114 &795734012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 795734011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a356ba2034950e240b77d988a36daecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  SelectableTag: PlayerEntity
 --- !u!20 &795734014 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20072257408152178, guid: 6ab2f683a9f29264fa137e43e06fc13b,
@@ -273,7 +299,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4063394736305202, guid: 6ab2f683a9f29264fa137e43e06fc13b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114241179696205804, guid: 6ab2f683a9f29264fa137e43e06fc13b,
         type: 2}
@@ -386,7 +412,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4136351168882760, guid: 01209abecd8990644b826116be8f6776, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114822106600213878, guid: 01209abecd8990644b826116be8f6776,
         type: 2}
@@ -398,51 +424,14 @@ Prefab:
       propertyPath: m_Center.y
       value: -0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 136286017616819844, guid: 01209abecd8990644b826116be8f6776,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01209abecd8990644b826116be8f6776, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1467957424
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1467957425}
-  - component: {fileID: 1467957426}
-  m_Layer: 0
-  m_Name: BoxSelectionHelper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1467957425
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1467957424}
-  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -6.74, y: 6.21, z: -1.09}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1467957426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1467957424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a356ba2034950e240b77d988a36daecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 795734014}
-  MouseButton: 1
 --- !u!1001 &2067376724
 Prefab:
   m_ObjectHideFlags: 0
