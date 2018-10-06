@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // The percentage width/height of the screen that will trigger a camera movement.
-    public float MouseTriggerZone = 0.1f;
+    // The GameObject to follow.
+    public GameObject TargetEntity;
 
     // The speed of the camera per fixedupdate.
     public float CameraSpeed = 0.1f;
+
+    // The offset to try and keep vs the TargetEntity's position.
+    public Vector3 CameraOffset = new Vector3(10.0f, 10.0f, 10.0f);
+
 
     Camera _camera;
 
@@ -22,34 +26,23 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        var mousePos = Input.mousePosition;
+        var targetPos = TargetEntity.transform.position;
+        var curPos = this.transform.position;
 
-        // Mouse X and Y in UV coordinates
-        var mouseUV = _camera.ScreenToViewportPoint(mousePos);
+        // Try to move towards (target's position + offset) for XZ,
+        // and (ground level + offset.y) for Y - so that the camera won't
+        // clip into the ground
+        var wantedPos = targetPos + CameraOffset;
 
-        // Move the camera when the cursor nears the edges
-        var posDelta = Vector3.zero;
-        if(mouseUV.x < MouseTriggerZone)
+        RaycastHit downRayHit;
+        Ray downRay = new Ray(wantedPos, Vector3.down);
+        if(Physics.Raycast(downRay, out downRayHit))
         {
-            posDelta.x -= CameraSpeed;
-        }
-        else if(mouseUV.x > (1.0f - MouseTriggerZone))
-        {
-            posDelta.x += CameraSpeed;
-        }
-        if(mouseUV.y < MouseTriggerZone)
-        {
-            posDelta.z -= CameraSpeed;
-        }
-        else if(mouseUV.y > (1.0f - MouseTriggerZone))
-        {
-            posDelta.z += CameraSpeed;
+            // Ray hit ground, adjust Y
+            wantedPos.y = downRayHit.point.y + CameraOffset.y; 
         }
 
-        this.transform.Translate(posDelta);
-    }
-
-    void OnMouseDown()
-    {
+        this.transform.position = Vector3.MoveTowards(curPos, wantedPos, CameraSpeed);
+        this.transform.LookAt(targetPos);
     }
 }

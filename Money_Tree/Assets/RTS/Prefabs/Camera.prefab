@@ -101,8 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5110b0f91401ef44c950971ca1c13112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MouseTriggerZone: 0.1
+  TargetEntity: {fileID: 0}
   CameraSpeed: 1
+  CameraOffset: {x: 10, y: 10, z: 10}
 --- !u!114 &114538467741481334
 MonoBehaviour:
   m_ObjectHideFlags: 1
