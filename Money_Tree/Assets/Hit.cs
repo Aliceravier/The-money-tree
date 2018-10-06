@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Hit : MonoBehaviour {
 
-    public int range;
-    public uint damage;
+    public int Range;
+
+    // If negative, the target entity is healed
+    public int Damage;
+
 
     // Use this for initialization
     void Start () {
@@ -18,12 +21,14 @@ public class Hit : MonoBehaviour {
         GameObject nearestEnemy = this.GetComponent<Positioning>().FindNearestEnemyUnit();
         if (nearestEnemy != null && this.GetComponent<Positioning>().inNearRangeOf(nearestEnemy))
         {
-            hit(nearestEnemy);
+            HitEntity(nearestEnemy);
         }
     }
 
-    public void hit(GameObject enemy)
+    // Deal Damage to entity
+    // Note that if Damage is negative the entity is healed!
+    public void HitEntity(GameObject entity)
     {
-        enemy.GetComponent<Health>().HP -= damage;
+        entity.GetComponent<Health>().HP -= Damage;
     }
 }

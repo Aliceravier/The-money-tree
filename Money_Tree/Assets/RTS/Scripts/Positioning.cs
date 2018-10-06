@@ -63,13 +63,13 @@ public class Positioning : MonoBehaviour {
 
     public bool inNearRangeOf(GameObject thing)
     {
-        int range = this.gameObject.GetComponent<Hit>().range;
+        int range = this.gameObject.GetComponent<Hit>().Range;
         return thing != null && (distanceTo(thing) < range);
     }
 
     public bool inFarRangeOf(GameObject thing)
     {
-        int range = this.gameObject.GetComponent<Shoot>().range;
+        int range = this.gameObject.GetComponent<Shoot>().Range;
         return thing != null && (distanceTo(thing) < range);
     }
 

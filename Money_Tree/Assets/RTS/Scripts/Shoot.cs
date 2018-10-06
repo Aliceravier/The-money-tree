@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour {
 
-    public GameObject bullet;
-    public int range;
+    public GameObject Bullet;
+
+    public int Range;
+
 
 	// Use this for initialization
 	void Start () {
@@ -17,12 +19,14 @@ public class Shoot : MonoBehaviour {
         GameObject nearestEnemy = this.GetComponent<Positioning>().FindNearestEnemyUnit();
         if (this.GetComponent<Positioning>().inFarRangeOf(nearestEnemy))
         {
-            shoot(nearestEnemy);
+            ShootEntity(nearestEnemy);
         }
 	}
 
-    public void shoot(GameObject enemy)
-    {
 
+    // Shoot the given entity
+    public void ShootEntity(GameObject entity)
+    {
+        // FIXME IMPLEMENT: Spawn bullet towards entity
     }
 }

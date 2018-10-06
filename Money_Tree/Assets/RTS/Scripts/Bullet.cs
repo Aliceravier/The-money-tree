@@ -5,7 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     // How much damage the bullet will do when it collides
-    public uint Damage = 50;
+    // If negative, the bullet will heal the collided entity!
+    public int Damage = 50;
+
 
     // Use this for initialization
     void Start()
@@ -23,7 +25,7 @@ public class Bullet : MonoBehaviour
         var otherHealth = otherObject.GetComponent<Health>();
         if(otherHealth != null && this.tag != otherObject.tag)
         {
-            // We hit an enemy that takes damage
+            // Deal Damage to entity
             otherHealth.TakeDamage(Damage);
         }
     }
