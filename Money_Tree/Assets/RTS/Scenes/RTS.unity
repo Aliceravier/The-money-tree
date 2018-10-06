@@ -177,13 +177,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1156738434}
-  bulletSpeed: 10
-  defaultDestructionTime: 5
+  BulletSpeed: 10
+  DefaultDestructionTime: 5
   Range: 10
   EnemyTag: EnemyUnit
-  cooldownTime: 1
-  timeOfLastShot: 0
-  damage: 5
+  CooldownTime: 3
+  TimeOfLastShot: 0
+  Damage: 10
+--- !u!95 &540157837
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 540157824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a80612dae08df414fa35f83a386585dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &593956397
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +340,29 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01209abecd8990644b826116be8f6776, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &681895047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1440386885370906, guid: 1ad7c052c5f74774099d2e04c973e013,
+    type: 2}
+  m_PrefabInternal: {fileID: 1265236658}
+--- !u!95 &681895057
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 681895047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b30f5bf3d829def44bbc2c1b3c376963, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &720360832 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1221531938124150, guid: 01209abecd8990644b826116be8f6776,
@@ -351,13 +392,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1156738434}
-  bulletSpeed: 20
-  defaultDestructionTime: 5
+  BulletSpeed: 10
+  DefaultDestructionTime: 5
   Range: 10
   EnemyTag: EnemyUnit
-  cooldownTime: 1
-  timeOfLastShot: 0
-  damage: 10
+  CooldownTime: 3
+  TimeOfLastShot: 0
+  Damage: 10
+--- !u!95 &720360844
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720360832}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f58498b7d44b7ad49adf086e620ddb3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &778768563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1089452682769734, guid: 6ab2f683a9f29264fa137e43e06fc13b,
@@ -577,6 +636,10 @@ Prefab:
       propertyPath: Particle
       value: 
       objectReference: {fileID: 1704904716}
+    - target: {fileID: 1440386885370906, guid: 1ad7c052c5f74774099d2e04c973e013, type: 2}
+      propertyPath: m_Name
+      value: RoamerEnemyUnit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ad7c052c5f74774099d2e04c973e013, type: 2}
   m_IsPrefabAsset: 0

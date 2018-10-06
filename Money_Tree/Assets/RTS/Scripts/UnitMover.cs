@@ -15,6 +15,8 @@ public class UnitMover : MonoBehaviour
     // sprite flips so that they don't keep flipping erratically
     const uint FLIP_COOLDOWN = 10;
 
+    Animator anim;
+
 
     uint _flipCooldown; // How many frames have to pass 'til the next sprite flip
     SpriteRenderer _spriteRenderer;
@@ -28,6 +30,7 @@ public class UnitMover : MonoBehaviour
         _navAgent = GetComponent<NavMeshAgent>();
         _selectable = GetComponent<Selectable>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 	}
 
     // Tell the unit to start moving towards a point if it was selected
@@ -51,6 +54,14 @@ public class UnitMover : MonoBehaviour
 
 	void Update()
 	{
+        if (Moving)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
         if(FlipSpriteX)
         {
             if(_flipCooldown == 0)
@@ -61,7 +72,7 @@ public class UnitMover : MonoBehaviour
                 //        smooth it over time to reduce flipping at a too high rate
                 var velocity = _navAgent.desiredVelocity;
 
-                bool shouldBeFlipped = velocity.x > 0.0f;
+                bool shouldBeFlipped = velocity.x < 0.0f;
                 if(shouldBeFlipped != _spriteRenderer.flipX)
                 {
                     _spriteRenderer.flipX = shouldBeFlipped; // Flip now
