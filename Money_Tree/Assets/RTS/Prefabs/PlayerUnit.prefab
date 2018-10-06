@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 195768629974836392}
   - component: {fileID: 136353977809076774}
   - component: {fileID: 114436787837480810}
+  - component: {fileID: 95949258997301454}
+  - component: {fileID: 114845331444448386}
   m_Layer: 0
   m_Name: PlayerUnit
   m_TagString: PlayerUnit
@@ -114,6 +116,24 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &95949258997301454
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749765767695210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f58498b7d44b7ad49adf086e620ddb3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!102 &102809629867939766
 TextMesh:
   serializedVersion: 3
@@ -200,6 +220,25 @@ MonoBehaviour:
   particleSpeed: 4
   timeTillParticleDestruction: 2
   team: 0
+--- !u!114 &114845331444448386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749765767695210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c898fe40a3342df4997d9f92451cb38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 0}
+  BulletSpeed: 20
+  DefaultDestructionTime: 5
+  Range: 10
+  EnemyTag: EnemyUnit
+  CooldownTime: 1
+  TimeOfLastShot: 0
+  Damage: 10
 --- !u!114 &114992817990556176
 MonoBehaviour:
   m_ObjectHideFlags: 1
