@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitMover : MonoBehaviour 
 {
-    // The speed the unity moves at
-    public float UnitSpeed = 10.0f;
-
     // The offset from the target point where to move the unit to.
     public Vector3 Offset = Vector3.zero;
 
@@ -15,28 +13,32 @@ public class UnitMover : MonoBehaviour
 
 
     bool _selected = false;
-    Vector3 _targetPos = Vector3.zero;
     MaterialPropertyBlock _materialProps; // (Used to control the glow when selected)
     SpriteRenderer _spriteRenderer;
+    NavMeshAgent _navAgent;
 
 	void Start()
 	{
-        // Stay where we are at the beginning
-        _targetPos = this.transform.position;
-        _materialProps = new MaterialPropertyBlock();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _navAgent = GetComponent<NavMeshAgent>();
+
 
         // Initialize defaults
+        _materialProps = new MaterialPropertyBlock();
         _selected = false;
         ApplyGlowColor(Color.black); // Initially deselected = no glow
 	}
+
 	
 	void Update()
 	{
-        var curPos = this.transform.position;
-        var nextPos = Vector3.MoveTowards(curPos, _targetPos, UnitSpeed * Time.deltaTime);
-        this.transform.position = nextPos;
+        // (Let _navAgent do its thing)
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+    }
+
 
     // Applies the given color to "Sprites/Edge"'s _EdgeGlowColor
     void ApplyGlowColor(Color color)
@@ -60,7 +62,7 @@ public class UnitMover : MonoBehaviour
         if(_selected)
         {
             //Debug.Log("Unit " + this + " move towards " + point);
-            _targetPos = point + Offset;
+            _navAgent.SetDestination(point + Offset);
         }
     }
 }

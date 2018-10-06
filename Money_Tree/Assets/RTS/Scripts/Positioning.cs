@@ -10,8 +10,8 @@ public class Positioning : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        enemies = GameObject.FindGameObjectsWithTag("enemy");
-        players = GameObject.FindGameObjectsWithTag("playerunit");
+        enemies = GameObject.FindGameObjectsWithTag("EnemyUnit");
+        players = GameObject.FindGameObjectsWithTag("PlayerUnit");
     }
 	
 	// Update is called once per frame
@@ -64,13 +64,13 @@ public class Positioning : MonoBehaviour {
     public bool inNearRangeOf(GameObject thing)
     {
         int range = this.gameObject.GetComponent<Hit>().range;
-        return (distanceTo(thing) < range);
+        return thing != null && (distanceTo(thing) < range);
     }
 
     public bool inFarRangeOf(GameObject thing)
     {
         int range = this.gameObject.GetComponent<Shoot>().range;
-        return (distanceTo(thing) < range);
+        return thing != null && (distanceTo(thing) < range);
     }
 
     public float distanceTo(GameObject thing)

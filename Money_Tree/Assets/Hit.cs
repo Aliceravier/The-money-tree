@@ -16,7 +16,7 @@ public class Hit : MonoBehaviour {
     void Update()
     {
         GameObject nearestEnemy = this.GetComponent<Positioning>().FindNearestEnemyUnit();
-        if (this.GetComponent<Positioning>().inNearRangeOf(nearestEnemy))
+        if (nearestEnemy != null && this.GetComponent<Positioning>().inNearRangeOf(nearestEnemy))
         {
             hit(nearestEnemy);
         }
