@@ -4,33 +4,38 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-	// The interval in seconds between consecutive spawns
-	public float Interval = 10.0f;
+    // The interval in seconds between consecutive spawns
+    public float Interval = 10.0f;
 
-	// The prefab to spawn
-	public GameObject Prefab = null;
+    // The prefab to spawn
+    public GameObject Prefab = null;
 
-	// The radius around this.Transform.origin where to spawn Prefabs
-	public float Radius = 1.0f;
+    // The radius around this.Transform.origin where to spawn Prefabs
+    // Note that prefabs are only spawned in the XZ plane!
+    public float Radius = 1.0f;
 
 
-	// Use this for initialization
-	void Start()
+    // Use this for initialization
+    void Start()
     {
         this.InvokeRepeating("Spawn", Interval, Interval);
-	}
+    }
 
-	// Called when gizmos are to be drawn
-    void OnDrawGizmosSelected()
+    // Called when gizmos are to be drawn
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(this.transform.position, Radius);
     }
 
-	
-	// Spawns an enemy
-	public void Spawn()
+    
+    // Spawns an enemy
+    public void Spawn()
     {
-        // FIXME IMPLEMENT Object.Instantiate(Prefab, );
-	}
+        var randOffset = new Vector3(Random.Range(-Radius, Radius),
+                                     0.0f,
+                                     Random.Range(-Radius, Radius));
+        var spawnPos = this.transform.position + randOffset;
+        Object.Instantiate(Prefab, spawnPos, Quaternion.identity);
+    }
 }
