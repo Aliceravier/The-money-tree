@@ -21,6 +21,8 @@ public class Shoot : MonoBehaviour {
 
     public float timeOfLastShot = 0;
 
+    public int damage = 10;
+
 
 	// Use this for initialization
 	void Start()
@@ -50,6 +52,7 @@ public class Shoot : MonoBehaviour {
         GameObject newBullet = Object.Instantiate(Bullet, this.transform.position, Quaternion.identity);
         newBullet.transform.LookAt(entity.transform);
         newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * bulletSpeed;
+        newBullet.GetComponent<damageOnHit>().damage = damage;
         newBullet.AddComponent<destroyAfterTime>();
         newBullet.GetComponent<destroyAfterTime>().timeTillDestruction = defaultDestructionTime;
     }
