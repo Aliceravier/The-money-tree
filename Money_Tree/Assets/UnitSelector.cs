@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitSelector : MonoBehaviour
 {
     // The camera to use for raycasting to the scene
-    public Camera camera = null;
+    public Camera Camera = null;
 
     // The currently= selection
     public HashSet<GameObject> Selection
@@ -19,10 +19,13 @@ public class UnitSelector : MonoBehaviour
     // The mouse button used to trigger the box selection
     public int MouseButton = 1;
 
+    public float BoxDepth = 100.0f;
+
 
     HashSet<GameObject> _selection = new HashSet<GameObject>();
     bool _selecting = false;
-    Vector3 _selectionStart = Vector2.zero, _selectionEnd = Vector2.zero;
+    Vector2 _selectionStartPos = Vector2.zero; // (pixels)
+    Vector2 _selectionEndPos = Vector2.zero; // (pixels)
 
 
     // Use this for initialization
@@ -44,35 +47,36 @@ public class UnitSelector : MonoBehaviour
     // LateUpdate is called once per frame after Update
     void LateUpdate()
     {
-        if(Input.GetMouseButton(MouseButton))
+        bool mouseDown = Input.GetMouseButtonDown(MouseButton);
+        bool mouseUp = Input.GetMouseButtonUp(MouseButton);
         {
-            if(!_selecting)
+            RaycastHit clickRayHit;
+            var clickRay = Camera.ScreenPointToRay(Input.mousePosition);
+            //Debug.DrawRay(clickRay.origin, clickRay.direction);
+            if(!Physics.Raycast(clickRay, out clickRayHit))
+            {
+                // No hit
+                return;
+            }
+
+            var resolution = new Vector2(Screen.width, Screen.height);
+            var clickPos = Input.mousePosition;
+            if(mouseDown && !_selecting)
             {
                 // Selection started; set start point
-                var clickRay = camera.ScreenPointToRay(Input.mousePosition);
-                RaycastHit clickRayHit;
-                Debug.DrawRay(clickRay.origin, clickRay.direction);
-                if(Physics.Raycast(clickRay, out clickRayHit))
-                {
-                    _selectionStart = clickRayHit.point;
-                    _selecting = true;
-                }
+                _selectionStartPos = clickPos;
+                _selecting = true;
             }
-            else
+            else if(mouseUp && _selecting)
             {
-                // Selection end; set endpoint
-                var clickRay = camera.ScreenPointToRay(Input.mousePosition);
-                RaycastHit clickRayHit;
-                Debug.DrawRay(clickRay.origin, clickRay.direction);
-                if(Physics.Raycast(clickRay, out clickRayHit))
-                {
-                    _selectionEnd = clickRayHit.point;
-                    _selecting = false;
+                // Selection end, recalculate selection 
+                _selectionEndPos = clickPos;
+                _selecting = false;
 
-                    // Recalculate selection 
-                    UpdateBoxSelection();
-                }
+                UpdateBoxSelection();
             }
+
+           
         }
     }
 
@@ -80,8 +84,7 @@ public class UnitSelector : MonoBehaviour
     // WARNING: This will move the object to the center of the selection!
     void UpdateBoxSelection()
     {
-        Debug.Log("Update box selection: "
-                  + _selectionStart + " to " + _selectionEnd);
+        Debug.Log("Update box selection");
 
         _selection.Clear();
 
@@ -91,13 +94,16 @@ public class UnitSelector : MonoBehaviour
             Object.Destroy(gameObject.GetComponent<BoxCollider>());
         }
 
-        var boxCenter = (_selectionStart + _selectionEnd) / 2.0f; // (world space)
-        var boxExtents = Abs(_selectionEnd - _selectionStart); // (world space)
+        var boxStartWorld = Camera.ScreenToWorldPoint(_selectionStartPos);
+        var boxEndWorld = Camera.ScreenToWorldPoint(_selectionEndPos);
+        var boxExtents = Abs(boxStartWorld - boxEndWorld);
+        boxExtents.y = BoxDepth;
 
-        this.transform.position = boxCenter;
+        var boxCenterWorld = (boxStartWorld + boxEndWorld) / 2.0f;
+        var boxCenterLocal = this.transform.InverseTransformPoint(boxCenterWorld);
 
         var box = gameObject.AddComponent<BoxCollider>();
-        box.transform.position = Vector2.zero; // (local space)
+        box.transform.position = boxCenterLocal;
         box.size = boxExtents;
         box.isTrigger = true; // IMPORTANT!
     }
