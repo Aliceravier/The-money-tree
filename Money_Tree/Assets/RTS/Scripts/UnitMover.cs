@@ -40,6 +40,15 @@ public class UnitMover : MonoBehaviour
         }
     }
 
+    // Is the unit currently moving?
+    public bool Moving
+    {
+        get
+        {
+            return !_navAgent.isStopped;
+        }
+    }
+
 	void Update()
 	{
         if(FlipSpriteX)

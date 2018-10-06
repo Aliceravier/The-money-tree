@@ -28,7 +28,6 @@ public class Spawner : MonoBehaviour
         Gizmos.DrawWireSphere(this.transform.position, Radius);
     }
 
-    
     // Spawns an enemy
     public void Spawn()
     {

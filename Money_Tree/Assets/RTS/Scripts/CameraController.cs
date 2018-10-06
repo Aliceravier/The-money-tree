@@ -13,7 +13,6 @@ public class CameraController : MonoBehaviour
     // The offset to try and keep vs the TargetEntity's position.
     public Vector3 CameraOffset = new Vector3(10.0f, 10.0f, 10.0f);
 
-
     Camera _camera;
 
 
