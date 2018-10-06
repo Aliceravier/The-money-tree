@@ -37,7 +37,7 @@ public class Shoot : MonoBehaviour {
 
         if (_positioning.DistanceTo(nearestEnemy) < Range
             && (Time.time - TimeOfLastShot) > CooldownTime
-            && _unitMover.Moving)
+            && !_unitMover.Moving)
         {
             ShootEntity(nearestEnemy);
             TimeOfLastShot = Time.time;
