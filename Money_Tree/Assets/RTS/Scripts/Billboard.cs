@@ -12,6 +12,12 @@ public class Billboard : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        var cameraObject = GameObject.Find("Camera");
+        if(cameraObject != null)
+        {
+            Camera = cameraObject.GetComponent<Camera>();
+        }
+
         _baseRotation = this.transform.rotation;
     }
     
