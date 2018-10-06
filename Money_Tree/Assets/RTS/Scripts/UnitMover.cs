@@ -45,7 +45,7 @@ public class UnitMover : MonoBehaviour
     {
         get
         {
-            return !_navAgent.isStopped;
+            return _navAgent.desiredVelocity.magnitude > 0.1f;
         }
     }
 
