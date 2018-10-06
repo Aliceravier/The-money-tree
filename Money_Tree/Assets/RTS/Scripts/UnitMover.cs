@@ -14,7 +14,12 @@ public class UnitMover : MonoBehaviour
     // Flip the sprite's X based on where we are moving towards?
     public bool FlipSpriteX = true;
 
+    // The number of frames that need to pass between consecutive
+    // sprite flips so that they don't keep flipping erratically
+    const uint FLIP_COOLDOWN = 10;
 
+
+    uint _flipCooldown; // How many frames have to pass 'til the next sprite flip
     bool _selected = false;
     MaterialPropertyBlock _materialProps; // (Used to control the glow when selected)
     SpriteRenderer _spriteRenderer;
@@ -22,6 +27,7 @@ public class UnitMover : MonoBehaviour
 
 	void Start()
 	{
+        _flipCooldown = 0;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _navAgent = GetComponent<NavMeshAgent>();
 
@@ -63,12 +69,26 @@ public class UnitMover : MonoBehaviour
 	{
         if(FlipSpriteX)
         {
-            // Flip sprite based on where we are going
-            // IMPORTANT: By default sprites should look to their left!
-            // FIXME: Sometimes desiredVelocity flips at a very high rate;
-            //        smooth it over time to reduce flipping at a too high rate
-            var velocity = _navAgent.desiredVelocity;
-            _spriteRenderer.flipX = velocity.x > 0.0f;
+            if(_flipCooldown == 0)
+            {
+                // Flip sprite based on where we are going
+                // IMPORTANT: By default sprites should look to their left!
+                // FIXME: Sometimes desiredVelocity flips at a very high rate;
+                //        smooth it over time to reduce flipping at a too high rate
+                var velocity = _navAgent.desiredVelocity;
+
+                bool shouldBeFlipped = velocity.x > 0.0f;
+                if(shouldBeFlipped != _spriteRenderer.flipX)
+                {
+                    _spriteRenderer.flipX = shouldBeFlipped; // Flip now
+                    _flipCooldown = FLIP_COOLDOWN; // Stop flipping for a while
+                }
+            }
+            else
+            {
+                // Can't flip this frame, need to wait a bit more
+                _flipCooldown --;
+            }
         }
     }
 }
