@@ -9,17 +9,23 @@ public class Hit : MonoBehaviour {
     // If negative, the target entity is healed
     public int Damage;
 
+    // How the enemies to hit are tagged
+    public string EnemyTag = "EnemyUnit";
+
+
+    Positioning _positioning;
 
     // Use this for initialization
-    void Start () {
-		
+    void Start()
+    {
+        _positioning = this.GetComponent<Positioning>();
 	}
 
     // Update is called once per frame
     void Update()
     {
-        GameObject nearestEnemy = this.GetComponent<Positioning>().FindNearestEnemyUnit();
-        if (nearestEnemy != null && this.GetComponent<Positioning>().inNearRangeOf(nearestEnemy))
+        GameObject nearestEnemy = _positioning.FindNearestTagged(EnemyTag);
+        if (nearestEnemy != null && _positioning.DistanceTo(nearestEnemy) <= Range)
         {
             HitEntity(nearestEnemy);
         }

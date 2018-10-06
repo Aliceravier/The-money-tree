@@ -2,83 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Positioning : MonoBehaviour {
-
-    GameObject[] enemies;
-    GameObject[] players;
-
-
+public class Positioning : MonoBehaviour
+{
     // Use this for initialization
-    void Start () {
-        enemies = GameObject.FindGameObjectsWithTag("EnemyUnit");
-        players = GameObject.FindGameObjectsWithTag("PlayerUnit");
+    void Start()
+    {
     }
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update()
+    {
 	}
 
-    public GameObject FindNearestEnemyUnit()
+    // Returns the distance inbetween this and the given entity
+    public float DistanceTo(GameObject entity)
     {
-        if(enemies == null || enemies.Length == 0)
-        { 
-            // No enemy units
+        return (this.transform.position - entity.transform.position).magnitude;
+    }
+
+    // Finds the nearest GameObject tagged tag, or null if none was found
+    public GameObject FindNearestTagged(string tag)
+    {
+        var entities = GameObject.FindGameObjectsWithTag(tag);
+        if(entities == null || entities.Length == 0)
+        {
             return null;
         }
 
-        float minDistance = distanceTo(enemies[0]);
-        GameObject nearestEnemy = enemies[0];
-        foreach(GameObject enemy in enemies)
+        GameObject nearestEntity = null;
+        float minDistance = float.MaxValue; // (Always bigger than any real distance)
+        foreach(GameObject entity in entities)
         {
-            if(distanceTo(enemy) < minDistance)
+            var distance = DistanceTo(entity);
+            if(distance < minDistance)
             {
-                nearestEnemy = enemy;
-                minDistance = distanceTo(enemy);
+                nearestEntity = entity;
+                minDistance = distance;
             }
         }
-        return nearestEnemy;
-    }
-
-    public GameObject findNearestPlayerUnit()
-    {
-        if(players == null || players.Length == 0)
-        { 
-            // No player units
-            return null;
-        }
-
-        float minDistance = distanceTo(players[0]);
-        GameObject nearestplayer = players[0];
-        foreach (GameObject player in players)
-        {
-            if (distanceTo(player) < minDistance)
-            {
-                nearestplayer = player;
-                minDistance = distanceTo(player);
-            }
-        }
-        return nearestplayer;
-    }
-
-    public bool inNearRangeOf(GameObject thing)
-    {
-        int range = this.gameObject.GetComponent<Hit>().Range;
-        return thing != null && (distanceTo(thing) < range);
-    }
-
-    public bool inFarRangeOf(GameObject thing)
-    {
-        int range = this.gameObject.GetComponent<Shoot>().Range;
-        return thing != null && (distanceTo(thing) < range);
-    }
-
-    public float distanceTo(GameObject thing)
-    {
-        float xa = this.transform.position.x;
-        float ya = this.transform.position.y;
-        float xb = thing.transform.position.x;       
-        float yb = thing.transform.position.y;
-        return Mathf.Sqrt(Mathf.Pow(xb - xa, 2) + Mathf.Pow(yb - ya, 2));
+        return nearestEntity;
     }
 }

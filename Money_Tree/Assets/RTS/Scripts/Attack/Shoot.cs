@@ -8,16 +8,22 @@ public class Shoot : MonoBehaviour {
 
     public int Range;
 
+    // How the enemies to shoot are tagged
+    public string EnemyTag = "EnemyUnit";
+
+    Positioning _positioning;
+
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start()
+    {
+        _positioning = GetComponent<Positioning>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        GameObject nearestEnemy = this.GetComponent<Positioning>().FindNearestEnemyUnit();
-        if (this.GetComponent<Positioning>().inFarRangeOf(nearestEnemy))
+        GameObject nearestEnemy = _positioning.FindNearestTagged(EnemyTag);
+        if(nearestEnemy != null && _positioning.DistanceTo(nearestEnemy) < Range)
         {
             ShootEntity(nearestEnemy);
         }
