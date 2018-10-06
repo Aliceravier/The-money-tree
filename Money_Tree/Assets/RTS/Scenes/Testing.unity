@@ -367,7 +367,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4716126596629282, guid: 01209abecd8990644b826116be8f6776, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.26
+      value: -6.58
       objectReference: {fileID: 0}
     - target: {fileID: 4716126596629282, guid: 01209abecd8990644b826116be8f6776, type: 2}
       propertyPath: m_LocalPosition.z
@@ -398,6 +398,21 @@ Prefab:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 795734014}
+    - target: {fileID: 114436787837480810, guid: 01209abecd8990644b826116be8f6776,
+        type: 2}
+      propertyPath: SelectionGlowColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436787837480810, guid: 01209abecd8990644b826116be8f6776,
+        type: 2}
+      propertyPath: SelectionGlowColor.g
+      value: 0.73392546
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436787837480810, guid: 01209abecd8990644b826116be8f6776,
+        type: 2}
+      propertyPath: SelectionGlowColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01209abecd8990644b826116be8f6776, type: 2}
   m_IsPrefabAsset: 0

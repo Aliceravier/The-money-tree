@@ -29,6 +29,9 @@ public class Selectable : MonoBehaviour
     // The color the sprite will glow when selected
     public Color SelectionGlowColor = Color.yellow;
 
+    // The intensity of the selection glow
+    public float SelectionGlowIntensity = 0.4f;
+
     // Can the unit be [de]selected by OnMouseDown()?
     public bool MouseSelectable = true;    
 
@@ -47,17 +50,18 @@ public class Selectable : MonoBehaviour
         }
 
         _selected = false;
-        this.ApplyGlowColor(Color.black);
+        this.ApplyGlowColor(Color.black, this.SelectionGlowIntensity);
     }
 
     // Applies the given color to "Sprites/Edge"'s _EdgeGlowColor
     // (does nothing if there is no sprite renderer)
-    void ApplyGlowColor(Color color)
+    void ApplyGlowColor(Color color, float intensity)
     {
         if(_spriteRenderer != null)
         {
             _spriteRenderer.GetPropertyBlock(_materialProps);
             _materialProps.SetColor("_EdgeGlowColor", color);
+            _materialProps.SetFloat("_EdgeGlowIntensity", intensity);
             _spriteRenderer.SetPropertyBlock(_materialProps);
         }
     }
@@ -66,14 +70,14 @@ public class Selectable : MonoBehaviour
     public void Select()
     {
         _selected = true;
-        this.ApplyGlowColor(SelectionGlowColor);
+        this.ApplyGlowColor(this.SelectionGlowColor, this.SelectionGlowIntensity);
     }
 
     // Deselects the entity
     public void Deselect()
     {
         _selected = false;
-        this.ApplyGlowColor(Color.black);
+        this.ApplyGlowColor(Color.black, this.SelectionGlowIntensity);
     }
 
     void OnMouseDown()
