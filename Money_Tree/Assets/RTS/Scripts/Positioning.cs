@@ -21,6 +21,12 @@ public class Positioning : MonoBehaviour {
 
     public GameObject FindNearestEnemyUnit()
     {
+        if(enemies == null || enemies.Length == 0)
+        { 
+            // No enemy units
+            return null;
+        }
+
         float minDistance = distanceTo(enemies[0]);
         GameObject nearestEnemy = enemies[0];
         foreach(GameObject enemy in enemies)
@@ -36,6 +42,12 @@ public class Positioning : MonoBehaviour {
 
     public GameObject findNearestPlayerUnit()
     {
+        if(players == null || players.Length == 0)
+        { 
+            // No player units
+            return null;
+        }
+
         float minDistance = distanceTo(players[0]);
         GameObject nearestplayer = players[0];
         foreach (GameObject player in players)
