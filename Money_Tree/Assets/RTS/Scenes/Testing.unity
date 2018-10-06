@@ -514,16 +514,6 @@ Prefab:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 795734014}
-    - target: {fileID: 108649416877002628, guid: 6f5780f6388751540bd3500265f29fc2,
-        type: 2}
-      propertyPath: m_Shadows.m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 108649416877002628, guid: 6f5780f6388751540bd3500265f29fc2,
-        type: 2}
-      propertyPath: m_DrawHalo
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5780f6388751540bd3500265f29fc2, type: 2}
   m_IsPrefabAsset: 0

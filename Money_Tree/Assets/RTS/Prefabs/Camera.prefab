@@ -115,4 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 20072257408152178}
-  SelectableTag: PlayerEntity
+  SelectableTag: PlayerUnit
