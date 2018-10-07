@@ -57,6 +57,8 @@ public class SpikeyBoy : MonoBehaviour
         }
         else
         {
+            _state = State.Roaming;
+
             // No one in hit range, roam around
             if(_navAgent.desiredVelocity.magnitude < 0.1f)
             {

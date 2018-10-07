@@ -170,7 +170,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.89638054, g: 1, b: 0.7877358, a: 1}
   m_Intensity: 0.5
-  m_Range: 10
+  m_Range: 10.103035
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00b145e5a7cfde45ad602a0962e15ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeechingRange: 10
+  LeechingRange: 20
 --- !u!114 &114722679772918890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,6 +289,7 @@ MonoBehaviour:
   EnemyTag: EnemyUnit
   CooldownTime: 1
   TimeOfLastShot: 0
+  DirOfLastShot: {x: 0, y: 0, z: 1}
   Damage: 5
 --- !u!114 &114919528309810798
 MonoBehaviour:
