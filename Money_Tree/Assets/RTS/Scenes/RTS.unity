@@ -263,6 +263,11 @@ Prefab:
       propertyPath: m_Name
       value: RoamerEnemyUnit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114924599288282342, guid: df0b3123b2e97de4598bf082e1a463f5,
+        type: 2}
+      propertyPath: Range
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df0b3123b2e97de4598bf082e1a463f5, type: 2}
   m_IsPrefabAsset: 0
