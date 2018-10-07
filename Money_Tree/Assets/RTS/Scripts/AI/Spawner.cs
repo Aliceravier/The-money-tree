@@ -33,11 +33,11 @@ public class Spawner : MonoBehaviour
         _nSpawned = 0;
     }
 
-    // Called when gizmos are to be drawn
     void OnDrawGizmos()
     {
+        // FIXME: Should actually draw an uncapped cylinder!
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(this.transform.position, Radius);
+        Gizmos.DrawWireSphere(this.transform.position, this.Radius);
     }
 
     // Spawns an enemy

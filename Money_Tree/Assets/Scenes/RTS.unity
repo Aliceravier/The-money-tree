@@ -1418,16 +1418,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114329436807700372, guid: 427def9eef3265046ab53f1a653e3691,
+    - target: {fileID: 114788575916843212, guid: 427def9eef3265046ab53f1a653e3691,
         type: 2}
-      propertyPath: Prefab
+      propertyPath: TriggerUnit
       value: 
-      objectReference: {fileID: 834035746}
+      objectReference: {fileID: 2082104635}
     - target: {fileID: 114982570600409570, guid: 427def9eef3265046ab53f1a653e3691,
         type: 2}
       propertyPath: Camera
       value: 
       objectReference: {fileID: 778768567}
+    - target: {fileID: 114329436807700372, guid: 427def9eef3265046ab53f1a653e3691,
+        type: 2}
+      propertyPath: Prefab
+      value: 
+      objectReference: {fileID: 834035746}
     - target: {fileID: 114552291233746814, guid: 427def9eef3265046ab53f1a653e3691,
         type: 2}
       propertyPath: CameraObject
@@ -1448,6 +1453,11 @@ Prefab:
       propertyPath: ToSpawn.Array.data[2]
       value: 
       objectReference: {fileID: 1025880273}
+    - target: {fileID: 114403424654603544, guid: 427def9eef3265046ab53f1a653e3691,
+        type: 2}
+      propertyPath: Offset.y
+      value: 0.55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427def9eef3265046ab53f1a653e3691, type: 2}
   m_IsPrefabAsset: 0
