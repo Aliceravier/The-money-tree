@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Shoot : MonoBehaviour {
 
@@ -18,14 +19,14 @@ public class Shoot : MonoBehaviour {
     public int Damage = 10;
 
     Positioning _positioning;
-    UnitMover _unitMover;
+    NavMeshAgent _navAgent;
 
 
 	// Use this for initialization
 	void Start()
     {
         _positioning = GetComponent<Positioning>();
-        _unitMover = GetComponent<UnitMover>();
+        _navAgent = GetComponent<NavMeshAgent>();
 	}
 	
 	// Update is called once per frame
@@ -36,7 +37,7 @@ public class Shoot : MonoBehaviour {
             return;
         }
 
-        bool isMoving = _unitMover.Moving;
+        bool isMoving = _navAgent.velocity.magnitude > 0.1f;
 
         if (_positioning.DistanceTo(nearestEnemy) < Range
             && (Time.time - TimeOfLastShot) > CooldownTime
