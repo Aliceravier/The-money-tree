@@ -47,16 +47,34 @@ public class Hit : MonoBehaviour {
         }
     }
 
+    // Finds all enemy entities in hit range
+    public List<GameObject> FindAllInRange()
+    {
+        var list = new List<GameObject>();
+
+        var nearest = _positioning.FindAllTaggedByDistance(EnemyTag);
+        if(nearest != null)
+        {
+            // Someone is in range
+            foreach(GameObject ent in nearest)
+            {
+                if(_positioning.DistanceTo(ent) > Range)
+                {
+                    break; // NOTE: nearest is sorted by distance!
+                }
+                list.Add(ent);
+            }
+        }
+
+        return list;
+    }
+
     // Deal Damage to all entities in range
     public void HitAllInRange()
     {
-        var nearest = _positioning.FindAllTaggedByDistance(EnemyTag);
-        foreach(GameObject ent in nearest)
+        var inRange = FindAllInRange();
+        foreach(GameObject ent in inRange)
         {
-            if(_positioning.DistanceTo(ent) > Range)
-            {
-                break; // NOTE: nearest is sorted by distance!
-            }
             this.HitEntity(ent);
         }
     }
