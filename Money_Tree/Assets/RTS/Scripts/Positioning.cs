@@ -44,7 +44,7 @@ public class Positioning : MonoBehaviour
             }
             else if(yDist > xDist)
             {
-                return -1
+                return -1;
             }
             else
             {
