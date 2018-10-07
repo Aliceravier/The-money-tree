@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 195663694747380936}
   - component: {fileID: 114415318954915820}
   - component: {fileID: 65690007873696032}
-  - component: {fileID: 114439361759313796}
   m_Layer: 0
   m_Name: EnemyUnit
   m_TagString: EnemyUnit
@@ -94,25 +93,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 50
+  Particle: {fileID: 0}
+  particleSpeed: 4
+  timeTillParticleDestruction: 2
   team: 1
---- !u!114 &114439361759313796
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1440386885370906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c898fe40a3342df4997d9f92451cb38c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
-  bulletSpeed: 10
-  defaultDestructionTime: 5
-  Range: 10
-  EnemyTag: PlayerUnit
-  cooldownTime: 1
-  timeOfLastShot: 0
 --- !u!114 &114552232661136062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: 0}
-  SelectionGlowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   FlipSpriteX: 1
 --- !u!195 &195663694747380936
 NavMeshAgent:
@@ -183,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 915691c678128a3449246fa8443d2a3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a9b58b2e674d86c40a2ac51f0095d798, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
