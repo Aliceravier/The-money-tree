@@ -14,6 +14,7 @@ public class Shoot : MonoBehaviour {
 
     public int CooldownTime = 3;
     public float TimeOfLastShot = 0;
+    public Vector3 DirOfLastShot = Vector3.forward;
     public int Damage = 10;
 
     Positioning _positioning;
@@ -43,6 +44,7 @@ public class Shoot : MonoBehaviour {
         {
             ShootEntity(nearestEnemy);
             TimeOfLastShot = Time.time;
+            DirOfLastShot = nearestEnemy.transform.position - this.transform.position;
         }
 	}
 

@@ -18,13 +18,16 @@ public class UnitMover : MonoBehaviour
     // sprite flips so that they don't keep flipping erratically
     const uint FLIP_COOLDOWN = 10;
 
+    // See flipping code
+    const float SHOOT_FLIP_TRIGGER_TIME = 1.0f;
+
     Animator _animator;
 
     uint _flipCooldown; // How many frames have to pass 'til the next sprite flip
     SpriteRenderer _spriteRenderer;
     NavMeshAgent _navAgent;
     Selectable _selectable;
-
+    Shoot _shoot; // OPTIONAL, see flipping code
 
 	void Start()
 	{
@@ -33,6 +36,7 @@ public class UnitMover : MonoBehaviour
         _selectable = GetComponent<Selectable>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
+        _shoot = GetComponent<Shoot>();
 
         // Try to get the default main unit
         var mainUnitEnt = GameObject.Find("MainUnit");
@@ -85,13 +89,26 @@ public class UnitMover : MonoBehaviour
         {
             if(_flipCooldown == 0)
             {
-                // Flip sprite based on where we are going
+                // Flip sprite:
+                // - If we are shooting, based on where we are shooting
+                // - If we are moving, based on where we are going
+                // IN THIS PRIORITY
+
                 // IMPORTANT: By default sprites should look to their left!
                 // FIXME: Sometimes desiredVelocity flips at a very high rate;
                 //        smooth it over time to reduce flipping at a too high rate
-                var velocity = _navAgent.desiredVelocity;
+                Vector3 facingDir = _navAgent.desiredVelocity;
+                if(_shoot != null)
+                {
+                    var now = Time.time;
+                    if((now - _shoot.TimeOfLastShot) < SHOOT_FLIP_TRIGGER_TIME)
+                    {
+                        // We're shooting, so give priority to the shooting over the navigation
+                        facingDir = _shoot.DirOfLastShot;
+                    }
+                }
 
-                bool shouldBeFlipped = velocity.x < 0.0f;
+                bool shouldBeFlipped = facingDir.x < 0.0f;
                 if(shouldBeFlipped != _spriteRenderer.flipX)
                 {
                     _spriteRenderer.flipX = shouldBeFlipped; // Flip now
