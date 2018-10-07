@@ -8,10 +8,10 @@ public class MakeItRain : MonoBehaviour {
     public static int money = 0;
     public Transform coin;
     private GameObject coinInstance;
+    
     // Use this for initialization
     void Start () {
-       
-	}
+    }
 
     //Money disappears when clicked and adds to the global money variable
     
@@ -23,9 +23,13 @@ public class MakeItRain : MonoBehaviour {
 
             int x = gen.Next(-1500, 1500);
             if (x < Clickable_Tree.treeSize/5 && x > -Clickable_Tree.treeSize/5) {
+                if (gen.Next(1,2) == 1)
+                {
                 coinInstance = Instantiate(Resources.Load("Coin"),
                 new Vector3(x, 200),
                 Quaternion.identity) as GameObject;
+                }
+                
             }
         } 
 	}
@@ -33,7 +37,9 @@ public class MakeItRain : MonoBehaviour {
     void OnMouseDown()
     {
         money++;
+        CoinSoundMake.MakeCoinSound();
         Destroy(gameObject);
+
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -41,13 +47,9 @@ public class MakeItRain : MonoBehaviour {
         if (col.gameObject.name.Contains("basket"))
         {
             money++;
+            CoinSoundMake.MakeCoinSound();
             Destroy(gameObject);
-            Debug.Log("Collision occurred with basket");
-        }
-        else {
-            Debug.Log("Collision occurred with nonbasket");
-        }
-        
-    }
 
+        }
+    }
 }

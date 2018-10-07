@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ClickMe : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private AudioSource source;
+    // Use this for initialization
+    void Start () {
+        source = GetComponent<AudioSource>();
+    }
 
     void OnMouseDown()
     {
+        source.Play();
+        TreeGrows.timer = 10;
         Clickable_Tree.treeSize++;
         //Destroys old colliders when tree changes size
         if (Clickable_Tree.treeSize == 100)

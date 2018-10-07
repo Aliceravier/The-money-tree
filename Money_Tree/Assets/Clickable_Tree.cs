@@ -38,6 +38,5 @@ public class Clickable_Tree : MonoBehaviour
         {
             size.text = "CONSUME";
         }
-        Debug.Log(treeSize + " is tree size");
     }
 }
