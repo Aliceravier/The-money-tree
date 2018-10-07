@@ -65,7 +65,7 @@ public class UnitMover : MonoBehaviour
         }
     }
 
-	void Update()
+    void Update()
 	{
         // Get to _targetPos, BUT ONLY IF IN RANGE OF MAINUNIT
         var mainUnitPos = MainUnit.transform.position;
@@ -76,14 +76,7 @@ public class UnitMover : MonoBehaviour
         _navAgent.isStopped = (distToMainUnit > MainUnit.LeechingRange)
                               && (desiredDistToMainUnit > MainUnit.LeechingRange);
 
-        if(Moving)
-        {
-            _animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            _animator.SetBool("isWalking", false);
-        }
+        _animator.SetBool("isWalking", Moving && !_navAgent.isStopped);
 
         if(FlipSpriteX)
         {
