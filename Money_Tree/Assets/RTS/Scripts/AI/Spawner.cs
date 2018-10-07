@@ -14,11 +14,14 @@ public class Spawner : MonoBehaviour
     // Note that prefabs are only spawned in the XZ plane!
     public float Radius = 1.0f;
 
-    // If 0, n limit
+    // If 0, no limit
     public int Limit = 0;
 
     // If not null, the entity that needs to get in radius for the spawner to start spawning
     public GameObject TriggerUnit = null;
+
+    // The offset above ground where to spawn an entity
+    public Vector3 Offset = new Vector3(0.0f, 0.3f, 0.0f);
 
     uint _nSpawned;
 
@@ -62,10 +65,22 @@ public class Spawner : MonoBehaviour
             }
         }
 
+
         var randOffset = new Vector3(Random.Range(-Radius, Radius),
                                      0.0f,
                                      Random.Range(-Radius, Radius));
-        var spawnPos = this.transform.position + randOffset;
-        Object.Instantiate(Prefab, spawnPos, Quaternion.identity);
+        var spawnPoint = this.transform.position + randOffset;
+
+        RaycastHit spawnRayHit;
+        var spawnRay = new Ray(spawnPoint, Vector3.down);
+        if(Physics.Raycast(spawnRay, out spawnRayHit))
+        {
+            Object.Instantiate(Prefab, spawnRayHit.point + Offset, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogError("Raycast to ground failed, could not spawn prefab!");
+        }
+
     }
 }

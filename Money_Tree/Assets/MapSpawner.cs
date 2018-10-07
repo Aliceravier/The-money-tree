@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapSpawner : MonoBehaviour {
+public class MapSpawner : MonoBehaviour
+{
+	// NOTE: Place this well over the maximum height of the terrain and set Bounds
+	//       to match the terrain's size
+	//       It will create Spawners in midair; each individual Spawner will raycast
+	//       to the ground to spawn entities at a proper location
 
 	public GameObject SpawnerPrefab;
 	public GameObject[] ToSpawn;
@@ -36,14 +41,7 @@ public class MapSpawner : MonoBehaviour {
 			{
 				var spawnPoint = this.transform.position + this.RandBoxCoord();
 
-				RaycastHit spawnRayHit;
-				var spawnRay = new Ray(spawnPoint, Vector3.down);
-				if(!Physics.Raycast(spawnRay, out spawnRayHit))
-				{
-					Debug.LogError("Raycast failed, can't spawn on ground!");
-				}
-
-				var spawner = Instantiate(SpawnerPrefab, spawnRayHit.point, Quaternion.identity).GetComponent<Spawner>();
+				var spawner = Instantiate(SpawnerPrefab, spawnPoint, Quaternion.identity).GetComponent<Spawner>();
 				spawner.Prefab = prefab;
 				spawner.Limit = NEach;
 			}
