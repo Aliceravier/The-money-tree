@@ -28,11 +28,36 @@ public class Hit : MonoBehaviour {
     {
     }
 
+
     // Deal Damage to entity
     // Note that if Damage is negative the entity is healed!
     public void HitEntity(GameObject entity)
     {
         _animator.SetTrigger("isAttacking");
         entity.GetComponent<Health>().HP -= Damage;
+    }
+
+    // Deal Damage to nearest entity
+    public void HitNearest()
+    {
+        var nearest = _positioning.FindNearestTagged(EnemyTag);
+        if(nearest != null)
+        {
+            this.HitEntity(nearest);
+        }
+    }
+
+    // Deal Damage to all entities in range
+    public void HitAllInRange()
+    {
+        var nearest = _positioning.FindAllTaggedByDistance(EnemyTag);
+        foreach(GameObject ent in nearest)
+        {
+            if(_positioning.DistanceTo(ent) > Range)
+            {
+                break; // NOTE: nearest is sorted by distance!
+            }
+            this.HitEntity(ent);
+        }
     }
 }
