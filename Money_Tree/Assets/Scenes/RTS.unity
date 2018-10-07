@@ -325,6 +325,10 @@ Prefab:
       propertyPath: Bullet
       value: 
       objectReference: {fileID: 1156738434}
+    - target: {fileID: 1628357775262434, guid: 6f5780f6388751540bd3500265f29fc2, type: 2}
+      propertyPath: m_Name
+      value: MainUnit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5780f6388751540bd3500265f29fc2, type: 2}
   m_IsPrefabAsset: 0
@@ -1115,22 +1119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DetectionRange: 50
---- !u!1 &1798995066 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1824772444649626, guid: d5bec54e41502cc4fb9f3e332433c7aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 777987557}
---- !u!114 &1798995067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798995066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a591ef9507d0e24d8b4b2fd83220953, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1946429566
 Prefab:
   m_ObjectHideFlags: 0

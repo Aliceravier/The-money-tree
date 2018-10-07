@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 114722679772918890}
   - component: {fileID: 95756728295167512}
   m_Layer: 0
-  m_Name: PriestUnit
+  m_Name: MainUnit
   m_TagString: PlayerUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
