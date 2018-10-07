@@ -40,7 +40,7 @@ public class Clickable_Tree : MonoBehaviour
         {
             size.text = "CONSUME";
             SceneManager.LoadScene("RTS");
-            SceneManager.UnloadScene("PartOne");
+            SceneManager.UnloadSceneAsync("PartOne");
         }
     }
 }

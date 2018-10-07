@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class explodeOnHit : MonoBehaviour {
-
+    private AudioSource source;
     public GameObject Particle;
 
     public Team team = Team.player;
@@ -22,6 +22,7 @@ public class explodeOnHit : MonoBehaviour {
 
     void OnTriggerEnter(Collider collision)
     {
+        source.Play();
         var health = collision.gameObject.GetComponent<Health>();
         if (health == null)
         {
