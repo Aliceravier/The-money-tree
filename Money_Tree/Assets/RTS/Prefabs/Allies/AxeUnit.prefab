@@ -27,7 +27,9 @@ GameObject:
   - component: {fileID: 195313360357043160}
   - component: {fileID: 136060158021625306}
   - component: {fileID: 114740120845033370}
-  - component: {fileID: 95967290348827914}
+  - component: {fileID: 95146243046028774}
+  - component: {fileID: 114603519139930850}
+  - component: {fileID: 114840080783852140}
   m_Layer: 0
   m_Name: AxeUnit
   m_TagString: PlayerUnit
@@ -115,7 +117,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &95967290348827914
+--- !u!95 &95146243046028774
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -124,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 1027923382142548}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f58498b7d44b7ad49adf086e620ddb3c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 23776f4de7612e8488c9454ed826b9d2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -183,6 +185,20 @@ MonoBehaviour:
   particleSpeed: 4
   timeTillParticleDestruction: 2
   team: 0
+--- !u!114 &114603519139930850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027923382142548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4621f301778e91740a0fdf14ab485bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 4
+  Damage: 30
+  EnemyTag: EnemyUnit
 --- !u!114 &114617781367986556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,6 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: 0}
   FlipSpriteX: 1
+  MainUnit: {fileID: 0}
 --- !u!114 &114680722653848886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +237,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectionGlowColor: {r: 0.85377866, g: 1, b: 0.8066038, a: 1}
   MouseSelectable: 1
+--- !u!114 &114840080783852140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027923382142548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fa644bc3fc887429ea1e1cf9f7745a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DetectionRange: 50
 --- !u!114 &114966662492895468
 MonoBehaviour:
   m_ObjectHideFlags: 1
