@@ -494,7 +494,7 @@ Prefab:
         type: 2}
       propertyPath: Camera
       value: 
-      objectReference: {fileID: 778768567}
+      objectReference: {fileID: 0}
     - target: {fileID: 212657641761131276, guid: d5bec54e41502cc4fb9f3e332433c7aa,
         type: 2}
       propertyPath: m_SortingLayerID
