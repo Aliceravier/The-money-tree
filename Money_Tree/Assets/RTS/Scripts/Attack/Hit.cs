@@ -14,11 +14,13 @@ public class Hit : MonoBehaviour {
 
 
     Positioning _positioning;
+    Animator _animator;
 
     // Use this for initialization
     void Start()
     {
         _positioning = this.GetComponent<Positioning>();
+        _animator = this.GetComponent<Animator>();
 	}
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class Hit : MonoBehaviour {
     // Note that if Damage is negative the entity is healed!
     public void HitEntity(GameObject entity)
     {
+        _animator.SetTrigger("isAttacking");
         entity.GetComponent<Health>().HP -= Damage;
     }
 }
