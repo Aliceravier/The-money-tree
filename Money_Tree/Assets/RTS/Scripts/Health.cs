@@ -50,7 +50,7 @@ public class Health : MonoBehaviour
 	{
         _hp = MaxHP;
         _animator = GetComponent<Animator>();
-        //marvin = GetComponent<SceneManager>();
+        marvin = GetComponent<SceneManager>();
         source = GetComponent<AudioSource>();
     }
 

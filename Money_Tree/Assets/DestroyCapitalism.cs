@@ -17,9 +17,9 @@ public class DestroyCapitalism : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (MakeItRain.money >= 1000000)
+        if (MakeItRain.money >= 0)
         {
-            SceneManager.LoadScene("You_Win!");
+            SceneManager.LoadScene("RTS");
             SceneManager.UnloadScene("PartOne");
         }
     }
