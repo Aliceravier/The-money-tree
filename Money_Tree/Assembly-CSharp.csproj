@@ -70,6 +70,25 @@
     <Compile Include="Assets\ClickMe.cs" />
     <Compile Include="Assets\InfiniteScroll.cs" />
     <Compile Include="Assets\MakeItRain.cs" />
+    <Compile Include="Assets\RTS\Scripts\AI\Basher.cs" />
+    <Compile Include="Assets\RTS\Scripts\Attack\Hit.cs" />
+    <Compile Include="Assets\RTS\Scripts\Attack\Shoot.cs" />
+    <Compile Include="Assets\RTS\Scripts\Billboard.cs" />
+    <Compile Include="Assets\RTS\Scripts\Bullet.cs" />
+    <Compile Include="Assets\RTS\Scripts\CameraController.cs" />
+    <Compile Include="Assets\RTS\Scripts\damageOnHit.cs" />
+    <Compile Include="Assets\RTS\Scripts\destroyAfterTime.cs" />
+    <Compile Include="Assets\RTS\Scripts\explodeOnHit.cs" />
+    <Compile Include="Assets\RTS\Scripts\Health.cs" />
+    <Compile Include="Assets\RTS\Scripts\HealthBar.cs" />
+    <Compile Include="Assets\RTS\Scripts\MainUnit.cs" />
+    <Compile Include="Assets\RTS\Scripts\NeutralUnit.cs" />
+    <Compile Include="Assets\RTS\Scripts\Positioning.cs" />
+    <Compile Include="Assets\RTS\Scripts\Selectable.cs" />
+    <Compile Include="Assets\RTS\Scripts\Spawner.cs" />
+    <Compile Include="Assets\RTS\Scripts\TerrainController.cs" />
+    <Compile Include="Assets\RTS\Scripts\UnitMover.cs" />
+    <Compile Include="Assets\RTS\Scripts\UnitSelector.cs" />
     <Compile Include="Assets\ScrollInfinitely.cs" />
     <Compile Include="Assets\SpawnBasket.cs" />
     <Compile Include="Assets\SpawnSprinkler.cs" />
@@ -79,6 +98,8 @@
     <Compile Include="Assets\TeleportBack.cs" />
     <Compile Include="Assets\TreeGrows.cs" />
     <Compile Include="Assets\Watering.cs" />
+    <None Include="Assets\Shaders\Sprites-Edge.shader" />
+    <None Include="Assets\Shaders\license.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Kelton Holsen/Documents/GitHub/The-money-tree/Money_Tree/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
