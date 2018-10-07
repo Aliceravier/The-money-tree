@@ -813,6 +813,11 @@ Prefab:
       propertyPath: TargetEntity
       value: 
       objectReference: {fileID: 2082104635}
+    - target: {fileID: 114241179696205804, guid: 6ab2f683a9f29264fa137e43e06fc13b,
+        type: 2}
+      propertyPath: CameraOffset.y
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ab2f683a9f29264fa137e43e06fc13b, type: 2}
   m_IsPrefabAsset: 0
@@ -916,6 +921,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114817076307104718, guid: df0b3123b2e97de4598bf082e1a463f5,
+        type: 2}
+      propertyPath: MainUnit
+      value: 
+      objectReference: {fileID: 2082104638}
     - target: {fileID: 114959998909518912, guid: df0b3123b2e97de4598bf082e1a463f5,
         type: 2}
       propertyPath: Particle
@@ -1095,23 +1105,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02fb177789b7161428ce6b4229c04cca, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1461461985 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1511869734893734, guid: df0b3123b2e97de4598bf082e1a463f5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1265236658}
---- !u!114 &1461461986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1461461985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dab3c2e2c0e938e47bed87b3d7020a77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RoamingRadius: 50
 --- !u!1001 &1539295518
 Prefab:
   m_ObjectHideFlags: 0
@@ -1368,3 +1361,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1628357775262434, guid: 6f5780f6388751540bd3500265f29fc2,
     type: 2}
   m_PrefabInternal: {fileID: 409225486}
+--- !u!114 &2082104638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114634235111362890, guid: 6f5780f6388751540bd3500265f29fc2,
+    type: 2}
+  m_PrefabInternal: {fileID: 409225486}
+  m_Script: {fileID: 11500000, guid: b00b145e5a7cfde45ad602a0962e15ac, type: 3}

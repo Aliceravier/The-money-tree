@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 65151640180652416}
   - component: {fileID: 95861251340957750}
   - component: {fileID: 114924599288282342}
+  - component: {fileID: 114383948477717444}
   m_Layer: 0
   m_Name: RoamerEnemyUnit
   m_TagString: EnemyUnit
@@ -42,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1511869734893734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.5, y: 2.05, z: 15}
+  m_LocalPosition: {x: 12.2, y: 2.4, z: 18.7}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,6 +91,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
+--- !u!114 &114383948477717444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511869734893734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab3c2e2c0e938e47bed87b3d7020a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoamingRadius: 50
 --- !u!114 &114817076307104718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: 0}
   FlipSpriteX: 1
+  MainUnit: {fileID: 0}
 --- !u!114 &114883807727277394
 MonoBehaviour:
   m_ObjectHideFlags: 1
