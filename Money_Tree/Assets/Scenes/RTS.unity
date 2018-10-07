@@ -621,7 +621,7 @@ Prefab:
     - target: {fileID: 114603519139930850, guid: dfbdf0d9049670845b4f355029a0cf2f,
         type: 2}
       propertyPath: Range
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfbdf0d9049670845b4f355029a0cf2f, type: 2}
@@ -991,14 +991,26 @@ Prefab:
       propertyPath: Prefab
       value: 
       objectReference: {fileID: 1794038452}
-    - target: {fileID: 114619318087720748, guid: 02fb177789b7161428ce6b4229c04cca,
-        type: 2}
-      propertyPath: Interval
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02fb177789b7161428ce6b4229c04cca, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1461461985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1511869734893734, guid: df0b3123b2e97de4598bf082e1a463f5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1265236658}
+--- !u!114 &1461461986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1461461985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab3c2e2c0e938e47bed87b3d7020a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoamingRadius: 50
 --- !u!1001 &1539295518
 Prefab:
   m_ObjectHideFlags: 0
@@ -1234,24 +1246,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1417156695730806, guid: 02fb177789b7161428ce6b4229c04cca,
     type: 2}
   m_PrefabInternal: {fileID: 1348662660}
---- !u!95 &2025983500
-Animator:
-  serializedVersion: 3
+--- !u!114 &2025983500
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2025983499}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 257a7d09f99d9aa498c7192a29565abe, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72bbfc8d3779b4548ada929a7aa9d618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 100
+  Particle: {fileID: 1704904716}
+  particleSpeed: 4
+  timeTillParticleDestruction: 2
+  team: 1
 --- !u!1 &2082104635 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1628357775262434, guid: 6f5780f6388751540bd3500265f29fc2,
