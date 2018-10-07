@@ -49,7 +49,11 @@ public class SpikeyBoy : MonoBehaviour
             // Stay where we are and AOE all in Hit.Range
             _navAgent.SetDestination(this.transform.position);
             _state = State.Attacking;
-            _animator.SetTrigger("startAttack");
+
+            if(!_animator.GetBool("isAttacking"))
+            {
+                _animator.SetTrigger("startAttack");
+            }
         }
         else
         {
