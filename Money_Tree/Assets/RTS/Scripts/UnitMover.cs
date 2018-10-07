@@ -74,7 +74,7 @@ public class UnitMover : MonoBehaviour
 
         // Stop moving if we're out of range AND we're trying to move further out of range
         _navAgent.isStopped = (distToMainUnit > MainUnit.LeechingRange)
-                              && (desiredDistToMainUnit > MainUnit.LeechingRange);
+                            && (desiredDistToMainUnit > MainUnit.LeechingRange);
 
         _animator.SetBool("isWalking", Moving && !_navAgent.isStopped);
 
