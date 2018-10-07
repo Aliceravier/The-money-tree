@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameCoordinator : MonoBehaviour
 {
     public KeyCode PauseKey = KeyCode.Escape;
-
+    public static SceneManager marvin;
     public bool Paused
     {
         get
@@ -42,11 +43,14 @@ public class GameCoordinator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        marvin = GetComponent<SceneManager>();
         _audioSource = GetComponent<AudioSource>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         _paused = false;
         _spriteRenderer.enabled = false;
+        SceneManager.UnloadScene("RTS");
+        SceneManager.LoadScene("PartOne");
     }
     
     // Update is called once per frame
