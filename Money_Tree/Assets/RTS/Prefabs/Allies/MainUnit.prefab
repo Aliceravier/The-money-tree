@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1628357775262434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 13.030001, y: 1.48, z: 12.57}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4537170677335398}
@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00b145e5a7cfde45ad602a0962e15ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LeechingRange: 10
 --- !u!114 &114722679772918890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,6 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: 0}
   FlipSpriteX: 1
+  MainUnit: {fileID: 114634235111362890}
 --- !u!136 &136212385455291066
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -324,7 +326,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.12
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 25
   m_AngularSpeed: 120

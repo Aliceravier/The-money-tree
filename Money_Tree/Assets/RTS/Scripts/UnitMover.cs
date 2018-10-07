@@ -11,12 +11,14 @@ public class UnitMover : MonoBehaviour
     // Flip the sprite's X based on where we are moving towards?
     public bool FlipSpriteX = true;
 
+    // The unit to restrict movement around
+    public MainUnit MainUnit = null;
+
     // The number of frames that need to pass between consecutive
     // sprite flips so that they don't keep flipping erratically
     const uint FLIP_COOLDOWN = 10;
 
-    Animator anim;
-
+    Animator _animator;
 
     uint _flipCooldown; // How many frames have to pass 'til the next sprite flip
     SpriteRenderer _spriteRenderer;
@@ -30,7 +32,14 @@ public class UnitMover : MonoBehaviour
         _navAgent = GetComponent<NavMeshAgent>();
         _selectable = GetComponent<Selectable>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
+
+        // Try to get the default main unit
+        var mainUnitEnt = GameObject.Find("MainUnit");
+        if(mainUnitEnt != null)
+        {
+            MainUnit = mainUnitEnt.GetComponent<MainUnit>();
+        }
 	}
 
     // Tell the unit to start moving towards a point if it was selected
@@ -39,7 +48,7 @@ public class UnitMover : MonoBehaviour
         if(_selectable.Selected)
         {
             //Debug.Log("Unit " + this + " move towards " + point);
-            _navAgent.SetDestination(point + Offset);
+            _navAgent.destination = point;
         }
     }
 
@@ -54,14 +63,28 @@ public class UnitMover : MonoBehaviour
 
 	void Update()
 	{
-        if (Moving)
+        // Get to _targetPos, BUT ONLY IF IN RANGE OF MAINUNIT
+        var mainUnitPos = MainUnit.transform.position;
+        var distToMainUnit = (_navAgent.nextPosition - mainUnitPos).magnitude;
+
+        if(distToMainUnit > MainUnit.LeechingRange)
         {
-            anim.SetBool("isWalking", true);
+            _navAgent.isStopped = true;
         }
         else
         {
-            anim.SetBool("isWalking", false);
+            _navAgent.isStopped = true;
         }
+
+        if(Moving)
+        {
+            _animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            _animator.SetBool("isWalking", false);
+        }
+
         if(FlipSpriteX)
         {
             if(_flipCooldown == 0)
