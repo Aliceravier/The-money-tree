@@ -47,10 +47,10 @@ GameObject:
   - component: {fileID: 114439636074062836}
   - component: {fileID: 108986132786356534}
   - component: {fileID: 114634235111362890}
-  - component: {fileID: 95370106307499804}
   - component: {fileID: 114722679772918890}
+  - component: {fileID: 95756728295167512}
   m_Layer: 0
-  m_Name: MainUnit
+  m_Name: PriestUnit
   m_TagString: PlayerUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &95370106307499804
+--- !u!95 &95756728295167512
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -127,7 +127,7 @@ Animator:
   m_GameObject: {fileID: 1628357775262434}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a80612dae08df414fa35f83a386585dd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7bebb7a5bb4e53c42a48c2136842915e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00b145e5a7cfde45ad602a0962e15ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LeechingRange: 10
 --- !u!114 &114722679772918890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,6 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: 0}
   FlipSpriteX: 1
+  MainUnit: {fileID: 114634235111362890}
 --- !u!136 &136212385455291066
 CapsuleCollider:
   m_ObjectHideFlags: 1
