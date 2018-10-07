@@ -7,7 +7,7 @@ public class DestroyCapitalism : MonoBehaviour {
     public static SceneManager marvin;
     // Use this for initialization
     void Start () {
-        //marvin = GetComponent<SceneManager>();
+        marvin = GetComponent<SceneManager>();
     }
 	
 	// Update is called once per frame
@@ -17,9 +17,9 @@ public class DestroyCapitalism : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (MakeItRain.money >= 0)
+        if (MakeItRain.money >= 1000000)
         {
-            SceneManager.LoadScene("RTS");
+            SceneManager.LoadScene("You_Win!");
             SceneManager.UnloadScene("PartOne");
         }
     }

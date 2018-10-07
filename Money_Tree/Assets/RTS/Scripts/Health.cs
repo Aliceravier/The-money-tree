@@ -104,7 +104,11 @@ public class Health : MonoBehaviour
                 SceneManager.LoadScene("yall_dead");
                 SceneManager.UnloadSceneAsync("RTS");
             }
-            
+            if (gameObject.name.Contains("Boss"))
+            {
+                SceneManager.LoadScene("yall_won");
+                SceneManager.UnloadSceneAsync("RTS");
+            }
         }
     }
 }
