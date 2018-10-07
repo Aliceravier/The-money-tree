@@ -40,14 +40,19 @@ public class Spawner : MonoBehaviour
     // Spawns an enemy
     public void Spawn()
     {
+        if(Prefab == null)
+        {
+            return;
+        }
+
+        _nSpawned ++;
+        if(Limit > 0 && _nSpawned > Limit)
+        {
+            return;
+        }
+
         if(TriggerUnit != null)
         {
-            _nSpawned ++;
-            if(Limit > 0 && _nSpawned > Limit)
-            {
-                return;
-            }
-
             var triggerPos = TriggerUnit.transform.position;
             var selfPos = this.transform.position;
             if((triggerPos - selfPos).magnitude > Radius)

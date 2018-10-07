@@ -34,8 +34,16 @@ public class MapSpawner : MonoBehaviour {
 		{
 			for(int i = 0; i < NSpawners; i ++)
 			{
-				var spawner = Instantiate(SpawnerPrefab,
-					this.transform.position + this.RandBoxCoord(), Quaternion.identity).GetComponent<Spawner>();
+				var spawnPoint = this.transform.position + this.RandBoxCoord();
+
+				RaycastHit spawnRayHit;
+				var spawnRay = new Ray(spawnPoint, Vector3.down);
+				if(!Physics.Raycast(spawnRay, out spawnRayHit))
+				{
+					Debug.LogError("Raycast failed, can't spawn on ground!");
+				}
+
+				var spawner = Instantiate(SpawnerPrefab, spawnRayHit.point, Quaternion.identity).GetComponent<Spawner>();
 				spawner.Prefab = prefab;
 				spawner.Limit = NEach;
 			}

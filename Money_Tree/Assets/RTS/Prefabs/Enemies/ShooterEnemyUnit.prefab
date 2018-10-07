@@ -107,6 +107,7 @@ MonoBehaviour:
   EnemyTag: PlayerUnit
   CooldownTime: 1
   TimeOfLastShot: 0
+  DirOfLastShot: {x: 0, y: 0, z: 1}
   Damage: 10
 --- !u!114 &114696603296406050
 MonoBehaviour:
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: 0}
   FlipSpriteX: 1
+  MainUnit: {fileID: 0}
 --- !u!114 &114999011682495094
 MonoBehaviour:
   m_ObjectHideFlags: 1
