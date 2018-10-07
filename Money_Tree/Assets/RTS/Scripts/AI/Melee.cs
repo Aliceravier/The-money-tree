@@ -27,6 +27,13 @@ public class Melee : MonoBehaviour
         _hit = GetComponent<Hit>();
         _navAgent = GetComponent<NavMeshAgent>();
     }
+
+    // Draw detection range
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, DetectionRange);
+    }
     
     // Update is called once per frame
     void Update()
