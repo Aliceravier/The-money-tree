@@ -67,14 +67,7 @@ public class UnitMover : MonoBehaviour
         var mainUnitPos = MainUnit.transform.position;
         var distToMainUnit = (_navAgent.nextPosition - mainUnitPos).magnitude;
 
-        if(distToMainUnit > MainUnit.LeechingRange)
-        {
-            _navAgent.isStopped = true;
-        }
-        else
-        {
-            _navAgent.isStopped = true;
-        }
+        _navAgent.isStopped = distToMainUnit > MainUnit.LeechingRange;
 
         if(Moving)
         {
