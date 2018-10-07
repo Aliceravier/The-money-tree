@@ -81,7 +81,7 @@ public class Health : MonoBehaviour
             }
             if (gameObject.name.Contains("MainUnit")) {
                 SceneManager.LoadScene("yall_dead");
-                SceneManager.UnloadScene("RTS");
+                SceneManager.UnloadSceneAsync("RTS");
             }
             
         }
