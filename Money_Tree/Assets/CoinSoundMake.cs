@@ -31,7 +31,7 @@ public class CoinSoundMake : MonoBehaviour {
         lastTreeVal = Clickable_Tree.treeSize;
         if (timer > 2000)
         {
-            SceneManager.LoadScene("You_Win!");
+            SceneManager.LoadScene("Life_Goes_On");
             SceneManager.UnloadScene("PartOne");
         }
         Debug.Log("Timer is " + timer);

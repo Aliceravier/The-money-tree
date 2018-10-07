@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9886098, g: 0.01568625, b: 0.99215686, a: 1}
+  m_Color: {r: 0.9450981, g: 0.058823533, b: 0.7019608, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2611,8 +2611,10 @@ GameObject:
   - component: {fileID: 814781092}
   - component: {fileID: 814781094}
   - component: {fileID: 814781093}
+  - component: {fileID: 814781095}
+  - component: {fileID: 814781096}
   m_Layer: 5
-  m_Name: Text
+  m_Name: AXE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2668,7 +2670,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy Axe (100,000,000)
+  m_Text: Buy Axe (1,000,000)
 --- !u!222 &814781094
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2676,6 +2678,42 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 814781091}
   m_CullTransparentMesh: 0
+--- !u!61 &814781095
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 814781091}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -23.771263, y: 6.9081535}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 115.99916, y: 14.816307}
+  m_EdgeRadius: 0
+--- !u!114 &814781096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 814781091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe37a0bd13d43f42b4c9fadf66d44d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &819218044
 GameObject:
   m_ObjectHideFlags: 0
