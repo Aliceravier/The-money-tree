@@ -5,13 +5,14 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
     // The camera to face towards.
-    public Camera Camera = null;
+    public Camera Camera = null; 
 
     Quaternion _baseRotation;
 
     // Use this for initialization
     void Start()
     {
+
         var cameraObject = GameObject.Find("Camera");
         if(cameraObject != null)
         {
