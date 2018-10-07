@@ -12,7 +12,7 @@ public class SpawnBasket : MonoBehaviour
     void Start()
     {
 
-        spawnX = 350;
+        spawnX = 375;
         spawnY = 30;
     }
 
@@ -25,7 +25,7 @@ public class SpawnBasket : MonoBehaviour
             basketInstance = Instantiate(Resources.Load("Basket"),
             new Vector3(spawnX, spawnY),
             Quaternion.identity) as GameObject;
-            spawnX -= 10;
+            spawnX -= 15;
             if (spawnX < 200)
             {
                 spawnX = 650;
