@@ -19,6 +19,7 @@ public class Melee : MonoBehaviour
     Positioning _positioning;
     NavMeshAgent _navAgent;
     Hit _hit;
+    Animator _animator;
 
     // Use this for initialization
     void Start()
@@ -26,6 +27,7 @@ public class Melee : MonoBehaviour
         _positioning = GetComponent<Positioning>();
         _hit = GetComponent<Hit>();
         _navAgent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
     }
 
     // Draw detection range
@@ -46,9 +48,17 @@ public class Melee : MonoBehaviour
         }
         else
         {
+            var nearest = nearestTargets[0];
+
             // Move towards nearest
             _state = State.Targetting;
-            _navAgent.SetDestination(nearestTargets[0].transform.position);
+            _navAgent.SetDestination(nearest.transform.position);
+
+            // Hit nearest if in range
+            if(_positioning.DistanceTo(nearest) <= _hit.Range)
+            {
+                _animator.SetTrigger("startAttack");
+            }
         }
     }
 }
