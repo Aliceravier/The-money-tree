@@ -11,10 +11,10 @@ public class MainUnit : MonoBehaviour
     public float HealingRange = 10.0f;
 
     // How much healing to do per tick
-    public int Healing = 1;  
+    public float Healing = 0.002f;  
 
     // How much healing to do to itself per tick
-    public int SelfHealing = 1;  
+    public float SelfHealing = 0.002f;  
 
     // The tag of friendly units
     public string PlayerTag = "PlayerUnit";
@@ -22,6 +22,9 @@ public class MainUnit : MonoBehaviour
 
     Positioning _positioning;
     Health _health;
+
+    float _healingAccum = 0.0f;
+    float _selfHealingAccum = 0.0f;
 
     // Use this for initialization
     void Start()
@@ -43,12 +46,23 @@ public class MainUnit : MonoBehaviour
     // Heal at fixed rate
     void FixedUpdate()
     {
-        var unitsToHeal = _positioning.FindAllTaggedByDistanceInRange(this.PlayerTag, this.HealingRange);
-        foreach(var unit in unitsToHeal)
+        _healingAccum += this.Healing;
+        _selfHealingAccum += this.SelfHealing;
+
+        if(_healingAccum > 1.0f)
         {
-            unit.GetComponent<Health>().HP += this.Healing;
+            _healingAccum -= 1.0f;
+            var unitsToHeal = _positioning.FindAllTaggedByDistanceInRange(this.PlayerTag, this.HealingRange);
+            foreach(var unit in unitsToHeal)
+            {
+                unit.GetComponent<Health>().HP += 1;
+            }
         }
 
-        _health.HP += this.SelfHealing;
+        if(_selfHealingAccum > 1.0f)
+        {
+            _selfHealingAccum -= 1.0f;
+            _health.HP += 1;
+        }
     }
 }
