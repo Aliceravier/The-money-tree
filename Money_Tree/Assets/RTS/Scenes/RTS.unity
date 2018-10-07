@@ -320,12 +320,12 @@ Prefab:
       propertyPath: Particle
       value: 
       objectReference: {fileID: 1084665686}
-    - target: {fileID: 195841676619686138, guid: 6f5780f6388751540bd3500265f29fc2,
-        type: 2}
-      propertyPath: m_Speed
-      value: 10
+    - target: {fileID: 1628357775262434, guid: 6f5780f6388751540bd3500265f29fc2, type: 2}
+      propertyPath: m_Name
+      value: PriestUnit
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 95370106307499804, guid: 6f5780f6388751540bd3500265f29fc2, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 6f5780f6388751540bd3500265f29fc2, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &593956397
@@ -978,7 +978,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4980216050096134, guid: bcefe2b8d09fcf14ab5e1168e59b5939, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.05
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 4980216050096134, guid: bcefe2b8d09fcf14ab5e1168e59b5939, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1022,6 +1022,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1497505255784430, guid: 5b85eccd6541ede4b8f7995c96497d78,
     type: 2}
   m_PrefabInternal: {fileID: 1539295518}
+--- !u!1 &1794038452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1815832303341244, guid: 55c18f64d32a7f24480b3cec13d5ed4a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1946429566}
+--- !u!114 &1794038453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794038452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49fa644bc3fc887429ea1e1cf9f7745a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DetectionRange: 50
 --- !u!1001 &1946429566
 Prefab:
   m_ObjectHideFlags: 0
@@ -1066,6 +1083,16 @@ Prefab:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 778768567}
+    - target: {fileID: 114731406955881914, guid: 55c18f64d32a7f24480b3cec13d5ed4a,
+        type: 2}
+      propertyPath: EnemyTag
+      value: PlayerUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 114866654704120978, guid: 55c18f64d32a7f24480b3cec13d5ed4a,
+        type: 2}
+      propertyPath: Particle
+      value: 
+      objectReference: {fileID: 1704904716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55c18f64d32a7f24480b3cec13d5ed4a, type: 2}
   m_IsPrefabAsset: 0
@@ -1074,3 +1101,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1628357775262434, guid: 6f5780f6388751540bd3500265f29fc2,
     type: 2}
   m_PrefabInternal: {fileID: 409225486}
+--- !u!95 &2082104636
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2082104635}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bebb7a5bb4e53c42a48c2136842915e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
