@@ -1166,11 +1166,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114672725368420946, guid: afac5d600918db44bae219e6066ce0c8,
-        type: 2}
-      propertyPath: PrefabsToSpawn.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4838103629910056, guid: afac5d600918db44bae219e6066ce0c8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 300.9
@@ -1203,22 +1198,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1859938610268772, guid: afac5d600918db44bae219e6066ce0c8, type: 2}
-      propertyPath: m_Name
-      value: NeutralUnit
-      objectReference: {fileID: 0}
-    - target: {fileID: 4838103629910056, guid: afac5d600918db44bae219e6066ce0c8, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4838103629910056, guid: afac5d600918db44bae219e6066ce0c8, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4838103629910056, guid: afac5d600918db44bae219e6066ce0c8, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 114672725368420946, guid: afac5d600918db44bae219e6066ce0c8,
         type: 2}
       propertyPath: PrefabsToSpawn.Array.data[0]
@@ -1228,7 +1207,12 @@ Prefab:
         type: 2}
       propertyPath: PrefabsToSpawn.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1681371599}
+    - target: {fileID: 114672725368420946, guid: afac5d600918db44bae219e6066ce0c8,
+        type: 2}
+      propertyPath: PrefabsToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1681371599}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afac5d600918db44bae219e6066ce0c8, type: 2}
   m_IsPrefabAsset: 0
@@ -1453,11 +1437,6 @@ Prefab:
       propertyPath: ToSpawn.Array.data[2]
       value: 
       objectReference: {fileID: 1025880273}
-    - target: {fileID: 114403424654603544, guid: 427def9eef3265046ab53f1a653e3691,
-        type: 2}
-      propertyPath: Offset.y
-      value: 0.55
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427def9eef3265046ab53f1a653e3691, type: 2}
   m_IsPrefabAsset: 0
