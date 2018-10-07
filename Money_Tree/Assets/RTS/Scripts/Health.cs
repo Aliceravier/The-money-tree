@@ -15,17 +15,20 @@ public class Health : MonoBehaviour
     // The maximum HP of the entity.
     public int MaxHP = 50;
 
-    public static SceneManager marvin; //For game end condition
-
     public GameObject Particle;
 
-    public float particleSpeed =4;
+    public float ParticleSpeed =4;
 
-    public float timeTillParticleDestruction=2;
+    public float TimeUntilParticleDestruction=2;
 
-    public Team team;
+    // A list of death sounds from which to choose from
+    public AudioClip[] DeathSounds = null;
 
-    private AudioSource source;
+    public Team Team = Team.player;
+
+    int _hp; // (Stores HP)
+    private AudioSource _source;
+    Animator _animator;
 
     // The current HP of the entity.
     // The setter internally calls `TakeDamage()`
@@ -41,17 +44,13 @@ public class Health : MonoBehaviour
         }
     }
 
-    int _hp; // (Stores HP)
-    Animator _animator;
-
 
 	// Use this for initialization
 	void Start()
 	{
         _hp = MaxHP;
         _animator = GetComponent<Animator>();
-        marvin = GetComponent<SceneManager>();
-        source = GetComponent<AudioSource>();
+        _source = GetComponent<AudioSource>();
     }
 
 
@@ -70,24 +69,7 @@ public class Health : MonoBehaviour
 
         if(_hp <= 0)
         {
-            //This block determines which grunting noise units make when they die
-            if (gameObject.tag.Contains("PlayerUnit"))
-            {
-                System.Random gen = new System.Random();
-                int gruntNum = gen.Next(1, 3);
-                if (gruntNum == 1)
-                {
-                    MakeGruntNoise.someoneDied();
-                }
-                else if (gruntNum == 2)
-                {
-                    MakeGruntNoise2.someoneDied();
-                }
-                else
-                {
-                    MakeGruntNoise3.someoneDied();
-                }
-            }
+            //TODO: Play random sound on death
             
             // Entity took excessive damage and will now die (only applies if you somehow are still in RTS scene)
             GameObject.Destroy(this.gameObject);
@@ -96,18 +78,9 @@ public class Health : MonoBehaviour
             {
                 GameObject newParticle = Object.Instantiate(Particle, this.transform.position, Quaternion.identity);
                 newParticle.transform.rotation = Random.rotation;
-                newParticle.GetComponent<Rigidbody>().velocity = newParticle.transform.forward * particleSpeed;
+                newParticle.GetComponent<Rigidbody>().velocity = newParticle.transform.forward * ParticleSpeed;
                 newParticle.AddComponent<destroyAfterTime>();
-                newParticle.GetComponent<destroyAfterTime>().timeTillDestruction = timeTillParticleDestruction;
-            }
-            if (gameObject.name.Contains("MainUnit")) {
-                SceneManager.LoadScene("yall_dead");
-                SceneManager.UnloadSceneAsync("RTS");
-            }
-            if (gameObject.name.Contains("Boss"))
-            {
-                SceneManager.LoadScene("yall_won");
-                SceneManager.UnloadSceneAsync("RTS");
+                newParticle.GetComponent<destroyAfterTime>().timeTillDestruction = TimeUntilParticleDestruction;
             }
         }
     }
