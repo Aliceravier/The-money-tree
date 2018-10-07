@@ -7,7 +7,7 @@ public class DestroyCapitalism : MonoBehaviour {
     public static SceneManager marvin;
     // Use this for initialization
     void Start () {
-        marvin = GetComponent<SceneManager>();
+        //marvin = GetComponent<SceneManager>();
     }
 	
 	// Update is called once per frame

@@ -43,7 +43,7 @@ public class GameCoordinator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        marvin = GetComponent<SceneManager>();
+        //marvin = GetComponent<SceneManager>();
         _audioSource = GetComponent<AudioSource>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
