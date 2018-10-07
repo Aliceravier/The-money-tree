@@ -44,7 +44,7 @@ public class Shoot : MonoBehaviour {
         {
             ShootEntity(nearestEnemy);
             TimeOfLastShot = Time.time;
-            DirOfLastShot = (nearestEnemy.transform.position - this.transform.position).magnitude;
+            DirOfLastShot = nearestEnemy.transform.position - this.transform.position;
         }
 	}
 
