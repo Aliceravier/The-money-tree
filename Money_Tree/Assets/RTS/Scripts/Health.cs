@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Team
 {
@@ -13,6 +14,8 @@ public class Health : MonoBehaviour
 {
     // The maximum HP of the entity.
     public int MaxHP = 50;
+
+    public static SceneManager marvin; //For game end condition
 
     public GameObject Particle;
 
@@ -45,7 +48,8 @@ public class Health : MonoBehaviour
 	{
         _hp = MaxHP;
         _animator = GetComponent<Animator>();
-	}
+        marvin = GetComponent<SceneManager>();
+}
 
 
     // Clamps an integer to two values
@@ -63,7 +67,8 @@ public class Health : MonoBehaviour
 
         if(_hp <= 0)
         {
-            // Entity took excessive damage and will now die
+            
+            // Entity took excessive damage and will now die (only applies if you somehow are still in RTS scene)
             GameObject.Destroy(this.gameObject);
             int nbParticles = 100;
             for (int i = 0; i < nbParticles; i++)
@@ -74,6 +79,11 @@ public class Health : MonoBehaviour
                 newParticle.AddComponent<destroyAfterTime>();
                 newParticle.GetComponent<destroyAfterTime>().timeTillDestruction = timeTillParticleDestruction;
             }
+            if (gameObject.name.Contains("MainUnit")) {
+                SceneManager.LoadScene("yall_dead");
+                SceneManager.UnloadScene("RTS");
+            }
+            
         }
     }
 }
