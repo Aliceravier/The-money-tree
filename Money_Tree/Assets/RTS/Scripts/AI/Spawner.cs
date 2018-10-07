@@ -14,6 +14,9 @@ public class Spawner : MonoBehaviour
     // Note that prefabs are only spawned in the XZ plane!
     public float Radius = 1.0f;
 
+    // If not null, the entity that needs to get in radius for the spawner to start spawning
+    public GameObject TriggerUnit = null;
+
 
     // Use this for initialization
     void Start()
@@ -31,10 +34,22 @@ public class Spawner : MonoBehaviour
     // Spawns an enemy
     public void Spawn()
     {
+        if(TriggerUnit != null)
+        {
+            var triggerPos = TriggerUnit.transform.position;
+            var selfPos = this.transform.position;
+            if((triggerPos - selfPos).magnitude > Radius)
+            {
+                // Unit out of range, don't spawn
+                return;
+            }
+        }
+
         var randOffset = new Vector3(Random.Range(-Radius, Radius),
                                      0.0f,
                                      Random.Range(-Radius, Radius));
         var spawnPos = this.transform.position + randOffset;
         Object.Instantiate(Prefab, spawnPos, Quaternion.identity);
+
     }
 }
