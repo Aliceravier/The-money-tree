@@ -26,7 +26,8 @@ public class explodeOnHit : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        else if(health.Team != team) {        
+        else if(health.Team != team)
+        {        
             int nbParticles = 3;
             for (int i = 0; i < nbParticles; i++)
             {

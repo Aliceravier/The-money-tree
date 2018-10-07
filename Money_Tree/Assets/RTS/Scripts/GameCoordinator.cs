@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameCoordinator : MonoBehaviour
 {
     public KeyCode PauseKey = KeyCode.Escape;
-    public static SceneManager marvin;
     public bool Paused
     {
         get
@@ -27,8 +26,6 @@ public class GameCoordinator : MonoBehaviour
         }
     }
 
-    public Camera Camera;
-
     public AudioClip InSfx;
     public AudioClip OutSfx;
 
@@ -37,20 +34,17 @@ public class GameCoordinator : MonoBehaviour
 
     bool _paused = false;
     AudioSource _audioSource;
-    SpriteRenderer _spriteRenderer;
+    Canvas _canvas;
 
 
     // Use this for initialization
     void Start()
     {
-        marvin = GetComponent<SceneManager>();
         _audioSource = GetComponent<AudioSource>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _canvas = GetComponent<Canvas>();
 
         _paused = false;
-        _spriteRenderer.enabled = false;
-        SceneManager.UnloadScene("RTS");
-        SceneManager.LoadScene("PartOne");
+        _canvas.enabled = false;
     }
     
     // Update is called once per frame
@@ -64,11 +58,7 @@ public class GameCoordinator : MonoBehaviour
 
     public void Pause()
     {
-        var screenCenterVP = new Vector3(0.5f, 0.5f, Camera.nearClipPlane);
-        this.transform.position = Camera.ViewportToWorldPoint(screenCenterVP);
-        this.transform.localScale = Vector3.one * PauseIconScale;
-        this.transform.LookAt(Camera.transform);
-        _spriteRenderer.enabled = true;
+        _canvas.enabled = true;
 
         _audioSource.clip = InSfx;
         _audioSource.Play();
@@ -78,7 +68,7 @@ public class GameCoordinator : MonoBehaviour
 
     public void Resume()
     {
-        _spriteRenderer.enabled = false;
+        _canvas.enabled = false;
 
         _audioSource.clip = OutSfx;
         _audioSource.Play();
