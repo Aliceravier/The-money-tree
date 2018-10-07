@@ -19,7 +19,7 @@ public class Shoot : MonoBehaviour {
     public int Damage = 10;
 
     Positioning _positioning;
-    NavMeshAgent _navAgent;;
+    NavMeshAgent _navAgent;
 
 
 	// Use this for initialization
