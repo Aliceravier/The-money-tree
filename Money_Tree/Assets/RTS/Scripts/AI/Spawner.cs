@@ -18,6 +18,7 @@ public class Spawner : MonoBehaviour
     public int Limit = 0;
 
     // If not null, the entity that needs to get in radius for the spawner to start spawning
+    // NOTE: "Getting in radius" means on the XZ plane!
     public GameObject TriggerUnit = null;
 
     // The offset above ground where to spawn an entity
@@ -56,9 +57,14 @@ public class Spawner : MonoBehaviour
 
         if(TriggerUnit != null)
         {
-            var triggerPos = TriggerUnit.transform.position;
-            var selfPos = this.transform.position;
-            if((triggerPos - selfPos).magnitude > Radius)
+            // Calculate XZ distance
+            var triggerPosXZ = TriggerUnit.transform.position;
+            triggerPosXZ.y = 0.0f;
+
+            var selfPosXZ = this.transform.position;
+            selfPosXZ.y = 0.0f;
+
+            if((triggerPosXZ - selfPosXZ).magnitude > Radius)
             {
                 // Unit out of range, don't spawn
                 return;
