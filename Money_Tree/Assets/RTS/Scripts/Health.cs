@@ -25,6 +25,8 @@ public class Health : MonoBehaviour
 
     public Team team;
 
+    private AudioSource source;
+
     // The current HP of the entity.
     // The setter internally calls `TakeDamage()`
     public int HP
@@ -49,7 +51,8 @@ public class Health : MonoBehaviour
         _hp = MaxHP;
         _animator = GetComponent<Animator>();
         marvin = GetComponent<SceneManager>();
-}
+        source = GetComponent<AudioSource>();
+    }
 
 
     // Clamps an integer to two values
@@ -67,6 +70,24 @@ public class Health : MonoBehaviour
 
         if(_hp <= 0)
         {
+            //This block determines which grunting noise units make when they die
+            if (gameObject.tag.Contains("PlayerUnit"))
+            {
+                System.Random gen = new System.Random();
+                int gruntNum = gen.Next(1, 3);
+                if (gruntNum == 1)
+                {
+                    MakeGruntNoise.someoneDied();
+                }
+                else if (gruntNum == 2)
+                {
+                    MakeGruntNoise2.someoneDied();
+                }
+                else
+                {
+                    MakeGruntNoise3.someoneDied();
+                }
+            }
             
             // Entity took excessive damage and will now die (only applies if you somehow are still in RTS scene)
             GameObject.Destroy(this.gameObject);
