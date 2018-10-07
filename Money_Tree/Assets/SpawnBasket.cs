@@ -28,7 +28,7 @@ public class SpawnBasket : MonoBehaviour
             spawnX -= 10;
             if (spawnX < 200)
             {
-                spawnX = 600;
+                spawnX = 650;
                 spawnY += 5;
             }
             BuyBasket.basket = false;

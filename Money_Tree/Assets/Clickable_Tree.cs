@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Clickable_Tree : MonoBehaviour
 {
-
+    public static SceneManager marvin;
     public static int treeSize;
     public Text size;
 
@@ -14,6 +15,7 @@ public class Clickable_Tree : MonoBehaviour
     {
         size = GetComponent<Text>();
         treeSize = 0;
+        marvin = GetComponent<SceneManager>();
     }
     // Update is called once per frame
     void Update()
@@ -37,6 +39,8 @@ public class Clickable_Tree : MonoBehaviour
         else
         {
             size.text = "CONSUME";
+            SceneManager.LoadScene("RTS");
+            SceneManager.UnloadScene("PartOne");
         }
     }
 }
