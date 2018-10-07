@@ -66,8 +66,11 @@ public class UnitMover : MonoBehaviour
         // Get to _targetPos, BUT ONLY IF IN RANGE OF MAINUNIT
         var mainUnitPos = MainUnit.transform.position;
         var distToMainUnit = (_navAgent.nextPosition - mainUnitPos).magnitude;
+        var desiredDistToMainUnit = (_navAgent.destination - mainUnitPos).magnitude;
 
-        _navAgent.isStopped = distToMainUnit > MainUnit.LeechingRange;
+        // Stop moving if we're out of range AND we're trying to move further out of range
+        _navAgent.isStopped = (distToMainUnit > MainUnit.LeechingRange)
+                              && (desiredDistToMainUnit > MainUnit.LeechingRange);
 
         if(Moving)
         {
