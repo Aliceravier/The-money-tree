@@ -96,7 +96,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 977150bad2129354788bba43e46a6280, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -153,7 +153,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 12800000, guid: 977150bad2129354788bba43e46a6280, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190253
@@ -238,6 +238,7 @@ MonoBehaviour:
   EnemyTag: EnemyUnit
   CooldownTime: 1
   TimeOfLastShot: 0
+  DirOfLastShot: {x: 0, y: 0, z: 1}
   Damage: 10
 --- !u!114 &114992817990556176
 MonoBehaviour:
@@ -252,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0, z: 0}
   FlipSpriteX: 1
+  MainUnit: {fileID: 0}
 --- !u!136 &136353977809076774
 CapsuleCollider:
   m_ObjectHideFlags: 1
