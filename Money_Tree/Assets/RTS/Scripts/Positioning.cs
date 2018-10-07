@@ -59,12 +59,19 @@ public class Positioning : MonoBehaviour
         var entities = GameObject.FindGameObjectsWithTag(tag);
         if(entities == null || entities.Length == 0)
         {
-            return null;
+            return new GameObject[0];
         }
 
         var comparer = new DistanceComparer(this);
         Array.Sort(entities, comparer);
         return entities;
+    }
+
+    // FindAllTaggedByDistance but with a max radius
+    public GameObject[] FindAllTaggedByDistanceInRange(string tag, float range)
+    {
+        var list = this.FindAllTaggedByDistance(tag);
+        return Array.FindAll(list, ent => this.DistanceTo(ent) <= range);
     }
 
     // Finds the nearest GameObject tagged tag, or null if none was found

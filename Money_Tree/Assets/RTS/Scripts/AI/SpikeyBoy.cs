@@ -43,8 +43,8 @@ public class SpikeyBoy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var inRange = _hit.FindAllInRange();
-        if(inRange.Count > 0)
+        var inRange = _positioning.FindAllTaggedByDistanceInRange(_hit.EnemyTag, _hit.Range);
+        if(inRange.Length > 0)
         {
             // Stay where we are and AOE all in Hit.Range
             _navAgent.SetDestination(this.transform.position);
