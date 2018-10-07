@@ -272,8 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeechingRange: 20
   HealingRange: 10
-  Healing: 1
-  SelfHealing: 1
+  Healing: 0.01
+  SelfHealing: 0.01
   PlayerTag: PlayerUnit
 --- !u!114 &114722679772918890
 MonoBehaviour:
