@@ -6,6 +6,7 @@ public class Watering : MonoBehaviour {
     public Sprite[] farmerSprites;
     public static int hat;
     int timer;
+    
     // Use this for initialization
     void Start () {
         farmerSprites = Resources.LoadAll<Sprite>("farmer");

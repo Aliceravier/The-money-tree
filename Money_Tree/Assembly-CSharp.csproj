@@ -68,6 +68,7 @@
     <Compile Include="Assets\Clickable.cs" />
     <Compile Include="Assets\Clickable_Tree.cs" />
     <Compile Include="Assets\ClickMe.cs" />
+    <Compile Include="Assets\CoinSoundMake.cs" />
     <Compile Include="Assets\InfiniteScroll.cs" />
     <Compile Include="Assets\MakeItRain.cs" />
     <Compile Include="Assets\RTS\Scripts\AI\Basher.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\RTS\Scripts\damageOnHit.cs" />
     <Compile Include="Assets\RTS\Scripts\destroyAfterTime.cs" />
     <Compile Include="Assets\RTS\Scripts\explodeOnHit.cs" />
+    <Compile Include="Assets\RTS\Scripts\GameCoordinator.cs" />
     <Compile Include="Assets\RTS\Scripts\Health.cs" />
     <Compile Include="Assets\RTS\Scripts\HealthBar.cs" />
     <Compile Include="Assets\RTS\Scripts\MainUnit.cs" />
