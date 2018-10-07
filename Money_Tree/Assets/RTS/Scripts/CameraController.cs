@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CameraController : MonoBehaviour
 {
@@ -14,12 +15,14 @@ public class CameraController : MonoBehaviour
     public Vector3 CameraOffset = new Vector3(10.0f, 10.0f, 10.0f);
 
     Camera _camera;
+    bool _cameraFollowsGaze;
 
 
     // Use this for initialization
     void Start()
     {
         _camera = GetComponent<Camera>();
+        _cameraFollowsGaze = false;
     }
     
     // Update is called once per frame
@@ -42,6 +45,24 @@ public class CameraController : MonoBehaviour
         }
 
         this.transform.position = Vector3.MoveTowards(curPos, wantedPos, CameraSpeed);
-        this.transform.LookAt(targetPos);
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            _cameraFollowsGaze = !_cameraFollowsGaze;
+        }
+
+        if(_cameraFollowsGaze)
+        {
+            var targetNavAgent = TargetEntity.GetComponent<NavMeshAgent>();
+            if(targetNavAgent != null)
+            {
+                var gaze = targetNavAgent.destination;
+                this.transform.LookAt(gaze);
+            }
+        }
+        else
+        {
+            this.transform.LookAt(targetPos);
+        }
     }
 }
