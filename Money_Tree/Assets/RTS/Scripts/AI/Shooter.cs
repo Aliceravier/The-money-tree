@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Basher : MonoBehaviour
+public class Shooter : MonoBehaviour
 {
-    // The tag entities to hit are marked by
-    public string TargetTag = "PlayerUnit";
-
+    NavMeshAgent _navAgent;
 
     // Use this for initialization
     void Start()
