@@ -15,7 +15,9 @@ public class Clickable_Tree : MonoBehaviour
     {
         size = GetComponent<Text>();
         treeSize = 0;
-        marvin = GetComponent<SceneManager>();
+        //marvin = GetComponent<SceneManager>();
+        //SceneManager.LoadScene("RTS");
+        //SceneManager.UnloadSceneAsync("PartOne");
     }
     // Update is called once per frame
     void Update()
