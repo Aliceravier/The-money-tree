@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    // The camera to face towards.
+    // The camera to face towards. If null, uses Camera.main
     public Camera Camera = null; 
 
     Quaternion _baseRotation;
@@ -12,11 +12,9 @@ public class Billboard : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        var cameraObject = GameObject.Find("Camera");
-        if(cameraObject != null)
+        if(this.Camera == null)
         {
-            Camera = cameraObject.GetComponent<Camera>();
+            this.Camera = Camera.main;
         }
 
         _baseRotation = this.transform.rotation;

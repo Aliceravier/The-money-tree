@@ -154,10 +154,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 50
-  Particle: {fileID: 0}
-  particleSpeed: 4
-  timeTillParticleDestruction: 2
-  team: 1
+  DeathParticle: {fileID: 1497505255784430, guid: 5b85eccd6541ede4b8f7995c96497d78,
+    type: 2}
+  DeathParticleSpeed: 4
+  TimeUntilParticleDestruction: 2
+  DeathSounds: []
+  DeathScene: 
+  Team: 0
 --- !u!195 &195850076020944766
 NavMeshAgent:
   m_ObjectHideFlags: 1

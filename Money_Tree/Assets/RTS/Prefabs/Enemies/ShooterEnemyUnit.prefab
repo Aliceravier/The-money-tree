@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c898fe40a3342df4997d9f92451cb38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
+  Bullet: {fileID: 1085230517298226, guid: 12149f75275def147844069098053307, type: 2}
   BulletSpeed: 40
   DefaultDestructionTime: 5
   Range: 10
@@ -121,10 +121,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 50
-  Particle: {fileID: 0}
-  particleSpeed: 4
-  timeTillParticleDestruction: 2
-  team: 1
+  DeathParticle: {fileID: 1497505255784430, guid: 5b85eccd6541ede4b8f7995c96497d78,
+    type: 2}
+  DeathParticleSpeed: 4
+  TimeUntilParticleDestruction: 2
+  DeathSounds: []
+  DeathScene: 
+  Team: 0
 --- !u!114 &114995620235861016
 MonoBehaviour:
   m_ObjectHideFlags: 1

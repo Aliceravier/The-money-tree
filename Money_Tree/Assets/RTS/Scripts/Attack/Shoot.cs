@@ -37,7 +37,16 @@ public class Shoot : MonoBehaviour {
             return;
         }
 
-        bool isMoving = _navAgent.velocity.magnitude > 0.1f;
+        bool isMoving;
+        if(_navAgent != null)
+        {
+            isMoving = _navAgent.velocity.magnitude > 0.1f;
+        }
+        else
+        {
+            // Static enemy
+            isMoving = false;
+        }
 
         if (_positioning.DistanceTo(nearestEnemy) < Range
             && (Time.time - TimeOfLastShot) > CooldownTime

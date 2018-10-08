@@ -216,10 +216,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 300
-  Particle: {fileID: 0}
-  ParticleSpeed: 4
+  DeathParticle: {fileID: 0}
+  DeathParticleSpeed: 4
   TimeUntilParticleDestruction: 2
   DeathSounds: []
+  DeathScene: 
   Team: 0
 --- !u!114 &114845331444448386
 MonoBehaviour:
@@ -232,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c898fe40a3342df4997d9f92451cb38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
+  Bullet: {fileID: 1854547663186160, guid: cae98aa8d806ae74ca5b723cfdc28f39, type: 2}
   BulletSpeed: 20
   DefaultDestructionTime: 5
   Range: 10
