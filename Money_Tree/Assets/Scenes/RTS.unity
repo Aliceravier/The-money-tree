@@ -324,11 +324,6 @@ Prefab:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 778768567}
-    - target: {fileID: 114217058125824040, guid: 6f5780f6388751540bd3500265f29fc2,
-        type: 2}
-      propertyPath: Particle
-      value: 
-      objectReference: {fileID: 1084665686}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5780f6388751540bd3500265f29fc2, type: 2}
   m_IsPrefabAsset: 0
@@ -495,58 +490,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 114647425717928608, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
-        type: 2}
-      propertyPath: Bullet
-      value: 
-      objectReference: {fileID: 1271945121}
-    - target: {fileID: 114051056338822846, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
-        type: 2}
-      propertyPath: Prefab
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114940695852002006, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
-        type: 2}
-      propertyPath: Prefab
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114099934003309672, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
-        type: 2}
-      propertyPath: Bullet
-      value: 
-      objectReference: {fileID: 1271945121}
     - target: {fileID: 114822213085602956, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
         type: 2}
       propertyPath: Camera
       value: 
       objectReference: {fileID: 778768567}
-    - target: {fileID: 114487661782513044, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
+    - target: {fileID: 114099934003309672, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
         type: 2}
-      propertyPath: Particle
+      propertyPath: Bullet
       value: 
-      objectReference: {fileID: 1704904716}
+      objectReference: {fileID: 1271945121}
+    - target: {fileID: 114647425717928608, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
+        type: 2}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 1271945121}
+    - target: {fileID: 114236214762626776, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
+        type: 2}
+      propertyPath: MainUnit
+      value: 
+      objectReference: {fileID: 2082104638}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9c245c4eee3fdb48ba4a4a025e62d7b, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &964690850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1535369262281618, guid: f9c245c4eee3fdb48ba4a4a025e62d7b,
-    type: 2}
-  m_PrefabInternal: {fileID: 964690849}
---- !u!114 &964690851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 964690850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af9abf474c887d342a0688fed7ffa787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Offset: {x: 0, y: 0, z: 0}
-  FlipSpriteX: 1
-  MainUnit: {fileID: 2082104638}
 --- !u!1 &1025880273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1975530479510494, guid: bcefe2b8d09fcf14ab5e1168e59b5939,

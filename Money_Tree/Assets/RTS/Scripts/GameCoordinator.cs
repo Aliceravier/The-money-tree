@@ -29,9 +29,6 @@ public class GameCoordinator : MonoBehaviour
     public AudioClip InSfx;
     public AudioClip OutSfx;
 
-    public float PauseIconScale = 0.05f;
-
-
     bool _paused = false;
     AudioSource _audioSource;
     Canvas _canvas;

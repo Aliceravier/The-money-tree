@@ -15,6 +15,15 @@ EditorBuildSettings:
     path: Assets/PartOne.unity
     guid: a014945ed979ca94299055468f8a7da0
   - enabled: 1
-    path: Assets/You_Win!.unity
+    path: Assets/you_win.unity
     guid: 0a80645d4125a6945905374c9f126419
+  - enabled: 1
+    path: Assets/yall_dead.unity
+    guid: 3ee9b397e77bb2144a05454ce7a5f5bb
+  - enabled: 1
+    path: Assets/yall_won.unity
+    guid: 23ca4badeab36c9499ddb3ab3ef0ab2b
+  - enabled: 1
+    path: Assets/life_goes_on.unity
+    guid: 88755ad64190baa46a6c3b7af7379827
   m_configObjects: {}

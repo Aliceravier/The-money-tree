@@ -230,10 +230,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 500
-  Particle: {fileID: 0}
-  ParticleSpeed: 4
+  DeathParticle: {fileID: 0}
+  DeathParticleSpeed: 4
   TimeUntilParticleDestruction: 2
   DeathSounds: []
+  DeathScene: yall_dead
   Team: 0
 --- !u!114 &114417260950792502
 MonoBehaviour:
