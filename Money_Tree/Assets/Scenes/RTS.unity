@@ -609,11 +609,6 @@ Prefab:
       propertyPath: TargetEntity
       value: 
       objectReference: {fileID: 2082104635}
-    - target: {fileID: 114241179696205804, guid: 6ab2f683a9f29264fa137e43e06fc13b,
-        type: 2}
-      propertyPath: CameraOffset.y
-      value: 18
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ab2f683a9f29264fa137e43e06fc13b, type: 2}
   m_IsPrefabAsset: 0
