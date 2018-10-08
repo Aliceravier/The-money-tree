@@ -152,21 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114552291233746814, guid: 427def9eef3265046ab53f1a653e3691,
-        type: 2}
-      propertyPath: CameraObject
-      value: 
-      objectReference: {fileID: 778768563}
-    - target: {fileID: 114982570600409570, guid: 427def9eef3265046ab53f1a653e3691,
-        type: 2}
-      propertyPath: Camera
-      value: 
-      objectReference: {fileID: 778768567}
-    - target: {fileID: 114788575916843212, guid: 427def9eef3265046ab53f1a653e3691,
-        type: 2}
-      propertyPath: TriggerUnit
-      value: 
-      objectReference: {fileID: 2082104635}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427def9eef3265046ab53f1a653e3691, type: 2}
   m_IsPrefabAsset: 0
@@ -421,11 +406,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afac5d600918db44bae219e6066ce0c8, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &778768563 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1089452682769734, guid: 6ab2f683a9f29264fa137e43e06fc13b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1152173095}
 --- !u!20 &778768567 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20072257408152178, guid: 6ab2f683a9f29264fa137e43e06fc13b,

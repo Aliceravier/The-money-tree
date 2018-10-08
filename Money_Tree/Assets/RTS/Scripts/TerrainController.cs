@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class TerrainController : MonoBehaviour
 {
-    public GameObject CameraObject = null;
+    // If null, use Camera.main
+    public Camera Camera = null;
+    
     public string UnitTag = "PlayerUnit";
-
-    Camera _camera;
 
 
     // Use this for initialization
     void Start()
     {
-        _camera = CameraObject.GetComponent<Camera>();
+        if(this.Camera == null)
+        {
+            this.Camera = Camera.main;
+        }
     }
 
     // Update is called once per frame
@@ -23,7 +26,7 @@ public class TerrainController : MonoBehaviour
 
     void OnMouseDown()
     {
-        var clickRay = _camera.ScreenPointToRay(Input.mousePosition);
+        var clickRay = this.Camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit clickRayHit;
         Physics.Raycast(clickRay, out clickRayHit);
 

@@ -14,6 +14,15 @@ public class UnitMover : MonoBehaviour
     // The unit to restrict movement around
     public MainUnit MainUnit = null;
 
+    // The tag of friendly units
+    public string FriendlyTag = "PlayerUnit";
+
+    // The range around the target point when to stop moving if colliding with something.
+    // This is to prevent all units from circling around MainUnit or other units endlessly
+    // because they can't reach MainUnit's origin!
+    public float StopDistance = 0.5f;
+
+
     // The number of frames that need to pass between consecutive
     // sprite flips so that they don't keep flipping erratically
     const uint FLIP_COOLDOWN = 10;
@@ -26,6 +35,7 @@ public class UnitMover : MonoBehaviour
     uint _flipCooldown; // How many frames have to pass 'til the next sprite flip
     SpriteRenderer _spriteRenderer;
     NavMeshAgent _navAgent;
+    Collider _collider;
     Selectable _selectable;
     Shoot _shoot; // OPTIONAL, see flipping code
 
@@ -37,6 +47,7 @@ public class UnitMover : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _shoot = GetComponent<Shoot>();
+        _collider = GetComponent<Collider>();
 
         // Try to get the default main unit
         var mainUnitEnt = GameObject.Find("MainUnit");
@@ -65,6 +76,20 @@ public class UnitMover : MonoBehaviour
         }
     }
 
+    // IMPORTANT:
+    // - Mark `isTrigger` in the prefab's collider
+    // - Project settings > Physics > Queries hit triggers = true
+    //   (to get OnMouseDown for Selectable)
+    // - Add a kinematic rigidbody component
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == FriendlyTag)
+        {
+            // FIXME: NOT WORKING!
+            Debug.Log("Touching friendly " + collision.gameObject);
+        }
+    }
+
     void Update()
 	{
         // Get to _targetPos, BUT ONLY IF IN RANGE OF MAINUNIT
@@ -72,9 +97,9 @@ public class UnitMover : MonoBehaviour
         var distToMainUnit = (_navAgent.nextPosition - mainUnitPos).magnitude;
         var desiredDistToMainUnit = (_navAgent.destination - mainUnitPos).magnitude;
 
-        // Stop moving if we're out of range AND we're trying to move further out of range
+        // Stop moving (if we're out of range AND we're trying to move further out of range)
         _navAgent.isStopped = (distToMainUnit > MainUnit.LeechingRange)
-                            && (desiredDistToMainUnit > MainUnit.LeechingRange);
+                              && (desiredDistToMainUnit > MainUnit.LeechingRange);
 
         _animator.SetBool("isWalking", Moving && !_navAgent.isStopped);
 

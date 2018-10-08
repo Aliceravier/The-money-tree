@@ -377,7 +377,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363697426321224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 73.6, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4696282824981726}
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06b0c3a45db4c04094ee9ecece44812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraObject: {fileID: 0}
+  Camera: {fileID: 0}
   UnitTag: PlayerUnit
 --- !u!114 &114593892854966088
 MonoBehaviour:
@@ -839,8 +839,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrefabsToSpawn:
   - {fileID: 1749765767695210, guid: 01209abecd8990644b826116be8f6776, type: 2}
-  - {fileID: 1749765767695210, guid: 01209abecd8990644b826116be8f6776, type: 2}
-  - {fileID: 1749765767695210, guid: 01209abecd8990644b826116be8f6776, type: 2}
+  - {fileID: 1027923382142548, guid: dfbdf0d9049670845b4f355029a0cf2f, type: 2}
+  - {fileID: 1027923382142548, guid: dfbdf0d9049670845b4f355029a0cf2f, type: 2}
   SpawnRadius: 2
   SpawnOffset: {x: 0, y: 1.5, z: 0}
 --- !u!114 &114724023296990440
