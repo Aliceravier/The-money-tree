@@ -5,13 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class CoinSoundMake : MonoBehaviour {
     private static AudioSource source;
-    public static SceneManager marvin;
     public static int timer; //This is for the hidden win condition
     int lastTreeVal;
     // Use this for initialization
     void Start () {
         source = GetComponent<AudioSource>();
-        marvin = GetComponent<SceneManager>();
         timer = 0;
         lastTreeVal = Clickable_Tree.treeSize;
     }
@@ -31,8 +29,7 @@ public class CoinSoundMake : MonoBehaviour {
         lastTreeVal = Clickable_Tree.treeSize;
         if (timer > 2000)
         {
-            SceneManager.LoadScene("Life_Goes_On");
-            SceneManager.UnloadScene("PartOne");
+            SceneManager.LoadScene("Life_Goes_On", LoadSceneMode.Single);
         }
         Debug.Log("Timer is " + timer);
     }
