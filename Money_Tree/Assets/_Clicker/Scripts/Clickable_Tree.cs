@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Clickable_Tree : MonoBehaviour
 {
-    public static SceneManager marvin;
     public static int treeSize;
     public Text size;
 
@@ -15,7 +14,6 @@ public class Clickable_Tree : MonoBehaviour
     {
         size = GetComponent<Text>();
         treeSize = 0;
-        marvin = GetComponent<SceneManager>();
         //SceneManager.LoadScene("RTS");
         //SceneManager.UnloadScene("PartOne");
     }
