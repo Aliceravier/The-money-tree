@@ -310,6 +310,7 @@ MonoBehaviour:
   DefaultDestructionTime: 5
   Range: 10
   EnemyTag: EnemyUnit
+  ShootIfMoving: 1
   CooldownTime: 1
   TimeOfLastShot: 0
   DirOfLastShot: {x: 0, y: 0, z: 1}
