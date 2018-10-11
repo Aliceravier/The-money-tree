@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NeutralUnit : MonoBehaviour
+public class AllySpawner : MonoBehaviour
 {
 	// The entities to instantiate when the user clicks on the unit
 	public GameObject[] PrefabsToSpawn;
