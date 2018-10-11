@@ -13,6 +13,9 @@ public class Shoot : MonoBehaviour {
     // How the enemies to shoot are tagged
     public string EnemyTag = "EnemyUnit";
 
+    // If false, don't shoot if moving
+    public bool ShootIfMoving = true;
+
     public int CooldownTime = 3;
     public float TimeOfLastShot = 0;
     public Vector3 DirOfLastShot = Vector3.forward;
@@ -38,7 +41,7 @@ public class Shoot : MonoBehaviour {
         }
 
         bool isMoving;
-        if(_navAgent != null)
+        if(_navAgent != null && !ShootIfMoving)
         {
             isMoving = _navAgent.velocity.magnitude > 0.1f;
         }

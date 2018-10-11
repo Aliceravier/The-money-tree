@@ -57,7 +57,13 @@ public class CameraController : MonoBehaviour
             if(targetNavAgent != null)
             {
                 var gaze = targetNavAgent.destination;
-                this.transform.LookAt(gaze);
+
+                var targetGazeRot = Quaternion.LookRotation(gaze - this.transform.position);
+                var curGazeRot = this.transform.rotation;
+
+                var gazeRot = Quaternion.Lerp(curGazeRot, targetGazeRot, 0.1f);
+                this.transform.rotation = gazeRot;
+
             }
         }
         else

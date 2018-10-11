@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
 
     // The radius around this.Transform.origin where to spawn Prefabs
     // Note that prefabs are only spawned in the XZ plane!
-    public float Radius = 1.0f;
+    public float Radius = 20.0f;
 
     // If 0, no limit
     public int Limit = 0;

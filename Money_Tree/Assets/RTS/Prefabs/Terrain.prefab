@@ -780,6 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DetectionRange: 35
+  MainAgent: {fileID: 0}
 --- !u!114 &114629869599887532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -791,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4621f301778e91740a0fdf14ab485bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 4
+  Range: 2
   Damage: 20
   EnemyTag: PlayerUnit
 --- !u!114 &114652672311509304
@@ -810,6 +811,7 @@ MonoBehaviour:
   DefaultDestructionTime: 5
   Range: 10
   EnemyTag: PlayerUnit
+  ShootIfMoving: 1
   CooldownTime: 1
   TimeOfLastShot: 0
   DirOfLastShot: {x: 0, y: 0, z: 1}
@@ -865,9 +867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7022fc87f02a2e45917db583072cbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interval: 5
+  Interval: 0.5
   Prefab: {fileID: 0}
-  Radius: 20
+  Radius: 30
   Limit: 0
   TriggerUnit: {fileID: 0}
   Offset: {x: 0, y: 0.3, z: 0}
