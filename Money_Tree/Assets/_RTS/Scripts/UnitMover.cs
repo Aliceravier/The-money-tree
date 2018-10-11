@@ -84,11 +84,7 @@ public class UnitMover : MonoBehaviour
         }
     }
 
-    // IMPORTANT:
-    // - Mark `isTrigger` in the prefab's collider
-    // - Project settings > Physics > Queries hit triggers = true
-    //   (to get OnMouseDown for Selectable)
-    // - Add a kinematic rigidbody component
+
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == FriendlyTag)

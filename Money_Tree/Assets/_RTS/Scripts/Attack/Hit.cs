@@ -28,12 +28,22 @@ public class Hit : MonoBehaviour {
     {
     }
 
+    public void setIsAttacking()
+    {
+        _animator.SetBool("isAttacking", true);
+    }
+
+    public void unsetIsAttacking()
+    {
+        _animator.SetBool("isAttacking", false);
+    }
+
 
     // Deal Damage to entity
     // Note that if Damage is negative the entity is healed!
     public void HitEntity(GameObject entity)
     {
-        _animator.SetTrigger("isAttacking");
+        //_animator.SetBool("isAttacking", true);
         entity.GetComponent<Health>().HP -= Damage;
     }
 
