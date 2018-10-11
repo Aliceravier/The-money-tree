@@ -69,6 +69,15 @@ public class Shoot : MonoBehaviour {
         newBullet.transform.LookAt(entity.transform);
         newBullet.GetComponent<Rigidbody>().velocity = newBullet.transform.forward * BulletSpeed;
         newBullet.GetComponent<damageOnHit>().damage = Damage;
+        var blood = GameObject.Find("Particle_blood");
+        if (blood != null)
+        {
+            newBullet.GetComponent<explodeOnHit>().Particle = blood;
+        }
+        else
+        {
+            print("add blood to the scene");
+        }
         newBullet.AddComponent<destroyAfterTime>();
         newBullet.GetComponent<destroyAfterTime>().timeTillDestruction = DefaultDestructionTime;
     }
