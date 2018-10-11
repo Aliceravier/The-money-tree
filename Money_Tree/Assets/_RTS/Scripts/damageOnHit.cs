@@ -18,7 +18,7 @@ public class damageOnHit : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter(Collider collision)
+    void OnCollisionEnter(Collision collision)
     {
         var health = collision.gameObject.GetComponent<Health>();
         if (health != null && health.Team != team){

@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4838103629910056}
   - component: {fileID: 64590439038531434}
-  - component: {fileID: 114672725368420946}
+  - component: {fileID: 114226964533681352}
   m_Layer: 0
   m_Name: AllySpawner
   m_TagString: NeutralUnit
@@ -157,7 +157,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 33a8d3ffa8720044a9ddeb2687fa87f9, type: 3}
---- !u!114 &114672725368420946
+--- !u!114 &114226964533681352
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefabsToSpawn:
+  - {fileID: 1027923382142548, guid: dfbdf0d9049670845b4f355029a0cf2f, type: 2}
+  - {fileID: 1027923382142548, guid: dfbdf0d9049670845b4f355029a0cf2f, type: 2}
   - {fileID: 1749765767695210, guid: 01209abecd8990644b826116be8f6776, type: 2}
-  - {fileID: 1027923382142548, guid: dfbdf0d9049670845b4f355029a0cf2f, type: 2}
-  - {fileID: 1027923382142548, guid: dfbdf0d9049670845b4f355029a0cf2f, type: 2}
   SpawnRadius: 2
   SpawnOffset: {x: 0, y: 1.5, z: 0}
