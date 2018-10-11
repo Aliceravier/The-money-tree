@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 4
-  Damage: 30
+  Damage: 5
   EnemyTag: EnemyUnit
 --- !u!114 &114617781367986556
 MonoBehaviour:
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fa644bc3fc887429ea1e1cf9f7745a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DetectionRange: 50
+  DetectionRange: 15
   MainAgent: {fileID: 0}
 --- !u!114 &114966662492895468
 MonoBehaviour:
