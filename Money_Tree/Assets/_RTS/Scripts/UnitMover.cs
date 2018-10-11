@@ -60,10 +60,18 @@ public class UnitMover : MonoBehaviour
     // Tell the unit to start moving towards a point if it was selected
     public void UnitMoveTowards(Vector3 point)
     {
-        if(_selectable.Selected)
+        if(_selectable != null && _selectable.Selected)
         {
             //Debug.Log("Unit " + this + " move towards " + point);
-            _navAgent.destination = point;
+
+            // Move units to a location near the enemy unit, but not ON the enemy unit
+            // so that they don't circle around him forever
+            const float RAND_RADIUS = 5.0f;
+            var randOffset = new Vector3(Random.Range(-RAND_RADIUS, RAND_RADIUS),
+                                         0.0f,
+                                         Random.Range(-RAND_RADIUS, RAND_RADIUS));
+
+            _navAgent.destination = point + randOffset;
         }
     }
 
